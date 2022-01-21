@@ -1,0 +1,879 @@
+@charset "utf-8";
+
+
+/*****공통*****/
+.section .innerWrap {
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    height: 100%;
+}
+.section .innerWrap:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+.section .main-txt p {
+    font-size: 20px;
+    line-height: 31px;
+    letter-spacing: -1px;
+    color: #3e3b39;
+}
+.section .main-txt p.title {
+    font-size: 40px;
+    line-height: 60px;
+    letter-spacing: 0;
+    font-weight: 500;
+    color: #3c3c3c;
+}
+
+
+
+
+
+div#wrap {
+    position: relative;
+    width: 100%;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.subVisual {
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+
+/*스크롤 안보이게 하기*/ /*이 부분 없는게 좋을 것 같음(상준)*/
+/*
+::-webkit-scrollbar {
+    display: none;
+}
+*/
+
+/* header부분(웹사이트 맨위에 나와산책, 이용방법...회사소개 이부분) css*/
+header{
+    position: fixed; /* 브라우저창을 기준으로 위치를 지정해 배치합니다.*/
+    top: 0;
+    z-index: 999; /* z-index는 ppt에 맨앞으로 배치 맨뒤로 배치와같은 역할임*/
+    width: 100%; /*위에 header 부분 가로를 100%로 지정*/
+    height: 60px; /*위에 header 부분 세로를 60px로 지정*/
+    background: rgba(0, 0, 0, 0.1); /*살짝 투명도 background 넣어줌 */
+    
+}
+
+/*header 부분 ANYMAN 이미지 위치등 지정하는 부분*/
+header > a {
+    position: absolute; /* relative값을 사용한 상위요소를 기준으로 위치를 지정해 배치합니다.*/
+    left: 100px; /*왼쪽에서 부터 얼마나 떨어지는지*/
+    top: 18px; /*위에서 부터 얼마나 떨어지는지*/
+    z-index: 1; /* z-index는 ppt에 맨앞으로 배치 맨뒤로 배치와같은 역할임 즉 여기서는 1칸 앞쪽으로 배치함*/
+    
+    width: 140px;
+    height: 24px;
+    background: url(Image/anyman-logo.svg) no-repeat;
+    cursor: pointer; /*ANYMAN글씨 클릭시 마우스 포인터모양 나오도록 */
+}
+
+/* > 표시는 딱 자식까지만 적용하겠다는뜻임(손자X) */
+/* header안에 span요소인 "나와 산책"이 글씨 안보이게 하기위함*/
+header > a span {
+    position: absolute;
+    top: -1000px;
+    text-indent: -9999px;
+    font-size: 0 !important; /*여기서도 보면 "나와산책"을 안보이게하기위해 0으로함*/
+}
+
+/*header 부분에 하나더 얹어놓는것 */
+header nav.pc-nav {
+    display: flex; /**/
+    justify-content: flex-end; /*요소들을 컨테이너의 우측으로 정렬*/
+    padding: 0 70px;
+    /*padding:10px; => top, right, bottom, left 값을 모두 10px으로 설정
+    padding:10px 5px; => top, bottom : 10px / left, right : 5px 값으로 설정
+    padding:10px 20px 30px 40px; => top : 10px, right : 20px, bottom : 30px, left : 40px 값으로 설정
+*/
+    background-color: black; /*이부분 일단 표시하기위해 넣어둠 (나중에 뺄것)*/
+}
+
+
+/*"나와산책" ~ "회사소개" 이부분*/
+header nav.pc-nav a {
+    position: relative;
+    display: block;
+    padding:20px 30px;
+    font-weight: 500;
+    color: #fff;
+    cursor: pointer;
+    font-size: 15px;
+    background-color: red; /*이부분 일단 표시하기위해 넣어둠(나중에 뺄것)*/
+}
+/* header부분(웹사이트 맨위에 나와산책, 이용방법...회사소개 이부분) css 여기까지*/
+
+
+/* header부분 (모바일) */
+
+header nav.mobile-nav {
+    display: none;
+}
+header nav.mobile-nav .sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+    text-align: center;
+}
+
+header nav.mobile-nav .sidenav a {
+    padding: 20px 0;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+header nav.mobile-nav .sidenav a:hover {
+    color: #f1f1f1;
+}
+
+header nav.mobile-nav .sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+header nav.mobile-nav span {
+    font-size: 30px;
+    cursor: pointer;
+    color: #fff;
+    float: right;
+    position: absolute;
+    right: 20px;
+    top: 12px;
+}
+/* header부분 (모바일) 끝 */
+
+
+
+
+
+/*****main*****/
+
+/**** 첫 번째 내용 내 이야기를 들어줄 사람 부분 ****/
+
+/* 한 개의 클래스 section만 사용하여 id 태그 사용 여러개의 클래스를 만드는 효과 */
+/*맨 첫장 가로 세로 지정*/
+
+
+.main #section0 {           
+    width: 100%;
+    height: 820px;
+}
+
+
+/* mainVisual은 첫 번째 화면 */
+.main #section0 .mainVisual {  
+    background: green;    /*나중에 background-img:url()로 바꿔야함 */
+    background-size: cover;    /* 가로 세로 비율 맞춰서 화면에 꽉 차게 함 */
+    height: 100%;
+}
+
+/* 첫 번째 화면에 있는 내용 전부  (내 이야기를 ~ 앱 로고까지) */
+.main #section0 .mainVisual .main-txt {  
+    position: absolute;    /* 위치 값이 클래스에 상속되지 않고 자유롭게 설정됨 */
+    top: 50%;              /* 따라서 top, left와 같이 고정된 위치 부여 가능 */
+    left: 0;
+    transform: translate(0, -50%);  /* transform: translate는 상대적인 위치 값을 부여 (X, Y) */
+    background-color: rgb(53, 10, 206);
+}
+
+/* 첫 번째 화면에 있는 누군가와 ~ 말하고 싶을때(텍스트부분) */
+.main #section0 .mainVisual .main-txt p {  
+    padding: 60px 0;
+    color: #fff;
+}
+
+/* 내 이야기를 들어줄 사람 */
+.main #section0 .mainVisual .main-txt p.title {  
+    padding: 0;
+    color: #fff;
+    font-weight: 400;       /* 글자 굵기 */
+}
+
+/* 나와산책 텍스트 부분*/
+.main #section0 .mainVisual .main-txt p.title span {   
+    font-size: 60px;
+    line-height: 70px;
+    letter-spacing: 0;    /* 문자 간격 */
+    font-weight: 500;
+    color: #fff;
+    display: block;
+} 
+
+/* app 전체 부분( 구글, 애플 ) */
+.main #section0 .mainVisual .innerWrap .app { 
+    text-align: center;
+    padding-top: 64px;
+}
+
+/* app 각 부분 */
+.main #section0 .mainVisual .innerWrap .app a{  
+    display: inline-block;
+    vertical-align: middle;   /* 요소를 중앙에 배치 */
+    background: rgba(255, 255, 255, 0.8);
+    width: 180px;
+    height: 50px;
+    border-radius: 30px;
+    line-height: 40px;
+    cursor: pointer;
+    margin-right: 16px;
+}
+
+/* app 이미지 부분 */
+.main #section0 .mainVisual .innerWrap .app a img{  
+    vertical-align: middle;
+}
+
+
+/**** 두 번째 내용 어떤 이야기든 상관없습니다 부분 ****/
+
+.main #section1 {
+    width: 100%;
+    height: 100%;
+}
+
+.main #section1 .subVisual {
+    background: orange;              /* 나중에 background-img:url()로 바꿔야함 */
+    background-size: cover;
+}
+
+/* 두 번째 화면에 있는 내용 전부  어떤 ~ 들어드립니다 */
+.main #section1 .subVisual .main-txt {
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+
+/* 두 번째 화면에 있는 내용 중 어떤 ~ 사람 */
+.main #section1 .main-txt p.title {   
+    padding: 125px 0 40px;
+    line-height: 50px;         /* 글자 줄 간격 */
+    text-align: center;
+}
+
+/* 두 번째 화면에 있는 내용 중 대화가 ~ 들어드립니다 */
+.main #section1 .main-txt p {    
+    text-align: center;
+}
+
+/**** 세 번째 내용 언제 어디서든 부분 ****/
+
+.main #section2 {
+    width: 100%;
+    height: 820px;
+}
+
+.main #section2 .subVisual {
+    background: skyblue;          /* 나중에 background-img:url()로 바꿔야함 */
+    background-size: cover;
+}
+
+/* 세 번째 화면에 있는 내용 전부  언제 ~ 이용 방법 */
+.main #section2 .subVisual .main-txt {   
+    position: absolute;
+    top: 50%;
+    left: 68%;
+    transform: translate(-50%, -50%);
+}
+
+/* 세 번째 화면에 있는 내용 중 언제 ~ 누구든지! */
+.main #section2 .main-txt p.title {       
+    font-size: 32px;
+    padding: 0;
+}
+
+/* 세 번째 화면에 있는 내용 중 이야기를 ~ 나눠보세요 */
+.main #section2 .main-txt p {        
+    line-height: 40px;
+    padding: 50px 0 90px;
+}
+
+/* 나와산책 이용방법 상호작용 버튼 만들기 */
+.main #section2 .subVisual .main-txt a {     
+    font-size: 16px;
+    line-height: 16px;
+    border: solid 1px #535251;   /* border: 테두리 */
+    padding: 10px 17px;
+    color: #333333;
+    cursor: pointer;               /* 마우스 커서를 갖다대면 클릭 모양으로 바뀜 */
+    display: inline-block;
+    transition: background 0.8s;   /* 속성을 서서히 바꿈 */
+}
+
+/* 나와산책 이용방법 상호작용 */
+.main #section2 .subVisual .main-txt a:hover {     
+    background: #333;
+    color: #fff;
+    transition: background 0.8s;
+}
+
+/**** 네 번째 내용 다양한 리스너 부분 ****/
+
+.main #section3 {
+    width: 100%;
+    height: 820px;
+}
+
+.main #section3 .subVisual {
+    background: pink;                   /* 나중에 background-img:url()로 바꿔야함 */
+    background-size: cover;
+}
+
+ /* 네 번째 화면에 있는 내용 전부  다양한 ~ 활용TIP */
+.main #section3 .subVisual .main-txt {    
+    position: absolute;
+    top: 50%;
+    left: 160px;
+    transform: translate(-50%, -50%);
+}
+
+/* 네 번째 화면에 있는 내용 중 다양한 ~ 사용후기 */
+.main #section3 .main-txt p.title {      
+    padding: 0;
+    line-height: 60px;
+}
+
+/* 네 번째 화면에 있는 내용 중 내 주변에 ~ 있어요 */
+.main #section3 .main-txt p {            
+    padding: 50px 0 90px;
+    line-height: 40px;
+}
+
+/* 나와산책 활용TIP 상호작용 버튼 만들기 */
+.main #section3 .subVisual .main-txt a {   
+    font-size: 16px;
+    line-height: 16px;
+    border: solid 1px #535251;
+    padding: 10px 17px;
+    color: #333333;
+    cursor: pointer;
+    display: inline-block;
+    transition: background 0.8s;
+}
+
+/* 나와산책 활용TIP 상호작용 */
+.main #section3 .subVisual .main-txt a:hover {    
+    background: #333;
+    color: #fff;
+    transition: background 0.8s;
+}
+
+
+
+
+
+
+/*활용 TIP 부분 */
+
+.tip #section0 {           
+    width: 100%;
+    height: 820px;
+}
+
+.tip #section1 {           
+    width: 100%;
+    height: 820px;
+    margin-bottom: 100px;
+    padding-bottom: 100px;
+}
+
+/*전체적인 글씨 중앙정렬*/
+.tip .subVisual {
+    margin: 0 150px;
+
+}
+
+.tip .subVisual .txtboxWrap {
+    padding-top: 200px;
+    text-align: center;
+    
+    
+}
+
+/*같이 걷고 싶을때, 혼자라는 생각이 들때
+    실제 고객님들의 이용후기 이부분 글씨*/
+.tip .subVisual .txtboxWrap .txtbox {
+    font-size: 40px;
+    font-weight: bold;
+    text-align: center;
+    color: #3c3c3c;
+    padding: 0 16px;
+}
+
+/*같이 걷고 싶을때, 혼자라는 생각이 들때 이부분 글씨*/
+.tip .subVisual .txtboxWrap .sub_txtbox {
+    font-size: 30px;
+    line-height: 42px;
+    font-weight: 400;
+    text-align: center;
+    color: #3c3c3c;
+    margin-top: 16px;
+    padding: 0 16px;
+}
+
+.tip .subVisual .imgbox {
+    position: absolute;
+    bottom: 0%;
+    width: 100%;
+    height: 100%;
+}
+.tip .subVisual .imgbox:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+
+.tip .subVisual .imgbox .list {
+    width: 25%;
+    float: left;
+    text-align: center;
+    height: 60%;
+    overflow: hidden;
+    position: absolute;
+    bottom: 0;
+}
+
+
+
+.tip .subVisual .imgbox .list:nth-child(1) {
+    left: 0;
+}
+.tip .subVisual .imgbox .list:nth-child(2) {
+    left: 25%;
+}
+.tip .subVisual .imgbox .list:nth-child(3) {
+    left: 50%;
+}
+.tip .subVisual .imgbox .list:nth-child(4) {
+    left: 75%;
+}
+
+.tip .section .subVisual .imgbox .list > span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+}
+
+.tip .section .subVisual .imgbox .list > p {
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 24px;
+    color: #fff;
+    font-weight: 500;
+    z-index: 1;
+    width: 100%;
+}
+
+/*애니맨에 없고 내가 만든것*/
+.tip .subVisual .imgbox .list p.big {
+    font-size: 34px;
+    line-height: 48px;
+    font-weight: 500;
+    padding-bottom: 400px;
+    color: black;
+}
+
+
+/*
+.tip .section .subVisual .imgbox .list:hover div {
+    transform: scale(1.15);
+    transition: all 0.7s;
+    -webkit-filter: blur(2px);
+    -moz-filter: blur(2px);
+    -o-filter: blur(2px);
+    -ms-filter: blur(2px);
+    filter: blur(2px);
+}
+*/
+
+.tip .section .subVisual .imgbox .list div {
+    height: 100%;
+    /*transition: all 0.7s;*/
+}
+
+
+/* 마우스 위로 갔을때 색깔 변하도록 하는것*/
+/*
+.tip .section .subVisual .imgbox .list div:hover:after {
+    content: "";
+    display: block;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+}
+*/
+
+.tip #section0 .subVisual .imgbox .list:nth-child(1) > div {
+    background-color: red;
+    background-size: cover;
+}
+.tip #section0 .subVisual .imgbox .list:nth-child(2) > div {
+    background-color: orange;
+    background-size: cover;
+}
+.tip #section0 .subVisual .imgbox .list:nth-child(3) > div {
+    background-color: yellow;
+    background-size: cover;
+}
+.tip #section0 .subVisual .imgbox .list:nth-child(4) > div {
+    background-color: green;
+    background-size: cover;
+}
+
+
+
+.tip #section1 .subVisual .imgbox .list:nth-child(1) > div {
+    background-color: gray;
+    background-size: cover;
+    
+}
+.tip #section1 .subVisual .imgbox .list:nth-child(2) > div {
+    background-color: gray;
+    background-size: cover;
+}
+.tip #section1 .subVisual .imgbox .list:nth-child(3) > div {
+    background-color: gray;
+    background-size: cover;
+}
+.tip #section1 .subVisual .imgbox .list:nth-child(4) > div {
+    background-color: gray;
+    background-size: cover;
+}
+
+
+
+
+/*****company 클래스 부분*****/
+
+/*회사소개 (background부분) */
+.company .section.bg {
+    height: 264px;
+    background: url('Image/company_bg.jpg') no-repeat center center;
+    background-size: cover;
+    display: table;
+    width: 100%;
+    text-align: center;
+    padding-top: 60px;
+}
+
+/*회사소개 (background부분) 모바일 */
+.company .section.bg.mb {
+    display: none;
+}
+
+/*회사소개 (p tag부분) 즉 회사소개 글씨 어떻게 할지 */
+.company .section.bg p {
+    display: table-cell;
+    vertical-align: middle;
+    font-size: 40px;
+    line-height: 40px;
+    font-weight: 500;
+}
+
+/*CEO 인사말 글씨 가운데 정렬해줌*/
+.company .section.titlebox .title {
+    text-align: center;
+    border-bottom: solid 2px #efefef;
+}
+
+/*CEO 인사말 글씨*/
+.company .section.titlebox .title p {
+    font-size: 30px;
+    line-height: 30px;
+    font-weight: bold;
+    padding: 25px 0;
+    display: inline-block;
+    border-bottom: solid 2px #333333;
+    margin-bottom: -2px;
+}
+
+/*"CEO 인사말 ~ 사람들이 원하는 바를"까지 띄어지게 만드는 곳*/ 
+.company .section.ceo {
+    padding: 90px 0;
+}
+
+/*"CEO 사진 왼쪽으로 나오게 만들고 오른쪽 글씨랑 약간 거리있도록 만드는 곳*/ 
+.company .section.ceo .innerWrap .profile {
+    float: left;
+    margin-right: 70px;
+}
+
+
+
+
+
+.company .section.ceo .innerWrap .profile .logo {  
+    text-align: center;
+    margin-top: 50px;
+}
+
+.company .section.ceo .innerWrap .text {
+    float: left;
+    width: 60%;
+    margin-top: -10px;
+}
+
+/*class="innerWrap pc" 이부분을 블록으로 만들기 */
+.company .section.ceo .innerWrap.pc {
+    display: block;
+}
+/*class="innerWrap mb" 이부분을 pc일때 안보이게 해줌 */
+.company .section.ceo .innerWrap.mb {
+    display: none;
+}
+
+
+.company .section.notice_box .innerWrap {
+    max-width: 900px;
+}
+
+/*사람들이 원하는 바를~ 대표윤주황까지 글씨관리 즉 전체글씨임*/
+.company .section.ceo .innerWrap .text p {
+    font-size: 18px;
+    line-height: 30px;
+    font-weight: 300;
+    letter-spacing: -1px;
+    margin-top: 32px;
+}
+/*사람들이 원하는 바를~ 텐데까지 글씨 관리*/
+.company .section.ceo .innerWrap .text p.big {
+    font-size: 28px;
+    line-height: 48px;
+    font-weight: 500;
+    margin-top: 0;
+}
+
+/*사람과 사람을 연결하다 글씨 관리*/
+.company .section.ceo .innerWrap .text p.sub {
+    font-size: 20px;
+    font-weight: 500;
+}
+
+/*"대표이사 윤주황" 글씨 관리*/
+.company .section.ceo .innerWrap .text p.ceo {
+    font-size: 24px;
+    line-height: 24px;
+    font-weight: bold;
+    margin-top: 50px;
+}
+/*"대표이사 윤주황" 오른쪽 이미지 관리 */
+.company .section.ceo .innerWrap .text p.ceo img {
+    vertical-align: middle;
+    margin-left: 16px;
+}
+
+
+.company .section.ceo .innerWrap .profile .img {
+        width: 100%;
+    }
+    
+.company .section.ceo .innerWrap .profile .img img {
+        width: 100%;
+    }
+    
+.company .section.ceo .innerWrap .profile .logo {
+        text-align: center;
+        width: 60%;
+        margin: 0 auto;
+        padding-top: 16px;
+    }
+
+
+/*CEO 사진 가로 380px 세로 558px로 맞추기*/
+.company .section.ceo .innerWrap .profile .img {
+    width: 380px;
+    height: 558px;
+}
+    
+    
+/*
+.company .section.ceo .innerWrap .profile .logo {
+    text-align: center;
+    width: 60%;
+    margin: 0 auto;
+    padding-top: 16px;
+}
+*/
+
+/* 사람과 사람을 연결하다 애니맨(하단)부분  css*/
+
+.all-ft {
+    background: #fff;
+}
+
+.all-ft {
+    height: auto !important;
+}
+
+
+.all-ft .slick-box {
+    padding: 70px 0;
+}
+
+.all-ft .slick-box .brand-logo {
+    display: flex;
+}
+
+.all-ft .app-down {
+    background: url("Image/main-bg06.png") no-repeat 50% 50%;
+    background-size: cover;
+    margin-top: 0;
+}
+/*"사람과 사람을 연결하다" 이 글씨 부분*/
+.all-ft .app-down .main-txt {
+    text-align: center;
+    padding-top: 80px;
+}
+
+/* 하단 "애니맨" 이 글씨부분*/
+.all-ft .app-down .main-txt p.title {
+    font-size: 32px;
+    line-height: 32px;
+    font-weight: bold;
+    padding: 15px 0 35px;
+}
+.all-ft .app-down .app {
+    text-align: center;
+    padding-bottom: 50px;
+}
+.all-ft .app-down .app a {
+    display: inline-block;
+    vertical-align: middle;
+    background: rgba(255, 255, 255, 0.5);
+    width: 180px;
+    height: 50px;
+    border-radius: 30px;
+    line-height: 40px;
+    margin: 0 15px;
+    cursor: pointer;
+}
+.all-ft .app-down .app a img {
+    vertical-align: middle;
+}
+
+
+/**** footer 부분 ****/
+
+/* 전체적인 footer 위치 */
+footer#footer {     
+    padding: 50px 0;
+}
+
+
+footer#footer:after {   
+    content: "";
+    display: block;
+    clear: both;
+}
+
+/* footer 텍스트 위치 */
+footer#footer .txt {
+    float: left;
+    width: 70%;
+}
+
+/* footer 로고 위치 */
+footer#footer .logo {
+    float: left;
+    width: 30%;
+    text-align: right;
+}
+
+/* footer 카카오톡 채널, 나와산책 부분 */
+footer#footer .txt .o-dep p {
+    font-size: 18px;
+    line-height: 22px;
+    font-weight: 400;
+    color: #3c3c3c;
+    display: flex;
+}
+/* footer#footer .txt .o-dep b {
+    font-weight: 500;
+    margin-right: 20px;
+    color: #3c3c3c;
+} */
+footer#footer .txt .o-dep a {
+    font-weight: 500;
+    margin: 0 20px 0 4px;
+    color: #3c3c3c;
+}
+footer#footer .txt .o-dep span {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 14px;
+    color: #666;
+}
+footer#footer .txt .tw-dep {
+    margin: 30px 0;
+}
+footer#footer .txt .tw-dep p {
+    font-size: 14px;
+    line-height: 26px;
+    color: #3c3c3c;
+}
+footer#footer .txt .tw-dep b {
+    font-weight: 500;
+    margin-left: 5px;
+}
+footer#footer .txt .tw-dep span {
+    font-size: 14px;
+    line-height: 26px;
+    color: #3c3c3c;
+    margin: 0 10px;
+}
+footer#footer .txt .th-dep {
+    font-size: 14px;
+    line-height: 14px;
+    color: #383838;
+    font-weight: 400;
+}
+footer#footer .logo .sns ul li {
+    margin-left: 10px;
+    display: inline-block;
+}
+footer#footer .logo .sns ul li:first-child {
+    margin-left: 0;
+}
+footer#footer .logo .sns ul li a {
+    width: 40px;
+    height: 40px;
+    display: block;
+    cursor: pointer;
+}
+footer#footer .logo .sns ul li:nth-child(1) a {
+    background: url(Image/sns-banner01.png) no-repeat 50% 50% / cover;
+}
+footer#footer .logo .sns ul li:nth-child(2) a {
+    background: url(Image/sns-banner02.png) no-repeat 50% 50% / cover;
+}
+footer#footer .logo .sns ul li:nth-child(3) a {
+    background: url(Image/sns-banner03.png) no-repeat 50% 50% / cover;
+}
+footer#footer .logo .sns ul li:nth-child(4) a {
+    background: url(Image/sns-banner04.png) no-repeat 50% 50% / cover;
+}
+footer#footer .logo .seoul {
+    margin-top: 40px;
+}
