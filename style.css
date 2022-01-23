@@ -177,7 +177,7 @@ header nav.mobile-nav span {
 
 .main #section0 {           
     width: 100%;
-    height: 820px;
+    height: 1000px;
 }
 
 
@@ -249,7 +249,7 @@ header nav.mobile-nav span {
 
 .main #section1 {
     width: 100%;
-    height: 100%;
+    height: 1000px;
 }
 
 .main #section1 .subVisual {
@@ -280,7 +280,7 @@ header nav.mobile-nav span {
 
 .main #section2 {
     width: 100%;
-    height: 820px;
+    height: 1000px;
 }
 
 .main #section2 .subVisual {
@@ -331,7 +331,7 @@ header nav.mobile-nav span {
 
 .main #section3 {
     width: 100%;
-    height: 820px;
+    height: 1000px;
 }
 
 .main #section3 .subVisual {
@@ -698,8 +698,174 @@ header nav.mobile-nav span {
     margin-top: 0;           /* 위에 간격 없이 붙이기 */
 }
 
+/*****listener*****/
+
+/* .listener header nav a {
+    color: #3c3c3c;
+} */
+
+/* listener 공통 */
+
+.listener .section {
+    width: 100%;
+    height: 1000px;
+}
+.listener .main-txt p.title {
+    font-size: 40px;
+    line-height: 60px;
+    color: #3c3c3c;
+    padding-top: 0;
+    font-weight: 500;
+}
+.listener .main-txt p {
+    font-size: 20px;
+    line-height: 30px;
+    padding-top: 30px;
+    color: #3c3c3c;
+}
 
 
+/* 첫 번째 화면 */
+
+.listener #section0 {
+    background: url(Image/listener-bg01.png);
+    background-size: cover;
+}
+.listener #section0 .main-txt {
+    text-align: center;
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.listener #section0 .main-txt p {
+    font-size: 20px;
+    padding: 0;
+}
+.listener #section0 .main-txt p.title {
+    font-size: 40px;
+    line-height: 60px;
+    font-weight: bold;
+    padding-top: 50px;
+}
+.listener #section0 .main-txt p.title span {
+    color: #0956be;
+    font-weight: bold;
+    display: block;
+    font-size: 50px;
+}
+.listener #section0 .img {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 0%);
+}
+
+/* 두 번째 화면 */
+
+.listener #section1 .main-txt { 
+    text-align: center;
+    width: 100%;
+    height: 25%;
+    margin-top: 50px;
+}
+
+.listener #section1 .sub-img {
+    display: flex;
+    text-align: center;
+}
+
+.listener #section1 .sub-img1 {
+    background: green;
+    height: 400px;
+    flex: 1;
+}
+
+.listener #section1 .sub-img2 {
+    background: pink;
+    height: 400px;
+    flex: 1;
+}
+
+.listener #section1 .sub-img3 {
+    background: orange;
+    height: 400px;
+    flex: 1;
+}
+
+.listener #section1 .sub-txt {
+    display: flex;
+    text-align: center;
+    margin-top: 20px;
+
+    font-size: 20px;
+    line-height: 30px;
+    padding-top: 30px;
+    color: #3c3c3c;
+}
+
+.listener #section1 .sub-title {
+    font-size: 30px;
+    line-height: 60px;
+    color: #3c3c3c;
+    padding-top: 0;
+    font-weight: 500;
+}
+
+.listener #section1 .sub-txt1 {
+    flex: 1;
+}
+
+.listener #section1 .sub-txt2 {
+    flex: 1;
+}
+
+.listener #section1 .sub-txt3 {
+    flex: 1;
+}
+
+/* 세 번째 화면 */
+
+.listener #section2 {
+    background: orange;
+}
+
+.listener #section2 .main-txt {
+    text-align: center;
+    width: 100%;
+    height: 25%;
+    margin-top: 20px;
+}
+
+.listener #section2 .sub-txt {
+    display: flex;
+    margin-top: 20px;
+}
+
+.listener #section2 .sub-txt1 {
+    flex: 1;
+}
+
+.listener #section2 .sub-txt2 {
+    flex: 1;
+}
+
+.listener #section2 .sub-txt3 {
+    flex: 1;
+}
+
+
+/* 네 번째 화면 */
+
+.listener #section3 {
+    background: skyblue;
+}
+.listener #section3 .main-txt {
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    height: 25%;
+}
 
 /*활용 TIP 부분 */
 
