@@ -813,7 +813,7 @@ header nav.mobile-nav span {
 
 /* 두 번째 화면 첫 번째 사진 설정 */
 
-.listener #section1 .sub-img1 {
+.listener #section1 .list:nth-child(1) {
     background: green;
     height: 400px;
     flex: 1;
@@ -821,7 +821,7 @@ header nav.mobile-nav span {
 
 /* 두 번째 화면 두 번째 사진 설정 */
 
-.listener #section1 .sub-img2 {
+.listener #section1 .list:nth-child(2) {
     background: pink;
     height: 400px;
     flex: 1;
@@ -829,7 +829,7 @@ header nav.mobile-nav span {
 
 /* 두 번째 화면 세 번째 사진 설정 */
 
-.listener #section1 .sub-img3 {
+.listener #section1 .list:nth-child(3) {
     background: orange;
     height: 400px;
     flex: 1;
@@ -860,19 +860,19 @@ header nav.mobile-nav span {
 
 /* 두 번째 화면 첫 번째 사진 내용(텍스트) 설정 - 나의 ~ 있어요 */
 
-.listener #section1 .sub-txt1 {
+.listener #section1 .list:nth-child(1) {
     flex: 1;
 }
 
 /* 두 번째 화면 두 번째 사진 내용(텍스트) 설정 - 신청 ~ 있어요 */
 
-.listener #section1 .sub-txt2 {
+.listener #section1 .list:nth-child(2) {
     flex: 1;
 }
 
 /* 두 번째 화면 세 번째 사진 내용(텍스트) 설정 - 활동한 ~ 정산돼요 */
 
-.listener #section1 .sub-txt3 {
+.listener #section1 .list:nth-child(3) {
     flex: 1;
 }
 
@@ -1683,5 +1683,663 @@ footer#footer .logo .seoul {
         width: auto;
         float: left;
         margin: 0 0 0 20px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+
+    /* use.html 모든 화면 상단선 기준 아래로 100%의 위치로 이동 */
+
+    .use #section1 .img {
+        top: 100%;
+    }
+    .use #section2 .img {
+        top: 100%;
+    }
+    .use #section3 .img {
+        top: 100%;
+    }
+    .use #section4 .img {
+        top: 100%;
+    }
+
+    /* imgbox( 4 영역으로 나눠 놓은 이미지 ) 100% > 60% */
+
+    .tip .subVisual .imgbox {
+        height: 60%;
+    }
+
+    /* imgbox list( 안에 내용들 ) 각 각 width, height 반으로 줄이기 */
+
+    .tip .subVisual .imgbox .list {
+        width: 50%;
+        height: 50%;
+        position: relative;
+    }
+
+    /* 안의 내용들 각 각 왼쪽으로 붙이기 */
+
+    .tip .subVisual .imgbox .list:nth-child(1),
+    .tip .subVisual .imgbox .list:nth-child(2),
+    .tip .subVisual .imgbox .list:nth-child(3),
+    .tip .subVisual .imgbox .list:nth-child(4) {
+        left: 0;
+    }
+
+    /* 안의 내용들 각 각 상단선 기준 아래쪽으로 65%에 위치 */
+
+    .tip .section .subVisual .imgbox .list > p {
+        top: 65%;
+    }
+
+    .listener .subVisual .sub-img .list:nth-child(1),
+    .listener .subVisual .sub-img .list:nth-child(2),
+    .listener .subVisual .sub-img .list:nth-child(3) {
+        left: 0;
+    }
+    .listener .sub-img {
+        align-items: center;
+        flex-direction: column;
+        height: 65%;
+    }
+    .listener .sub-img .list {
+        width: 70%;
+        height: 50%;
+        position: relative;
+    }
+    
+
+    /*** company.html 본문 내용 수정 ***/
+
+    /* 아래로 24px만큼 떨어트리기 */
+    
+    .company .section.ceo .innerWrap .text p {
+        margin-top: 24px;
+    }
+
+    /* 본문 내용 폰트 크기, 줄 간격 수정 */
+    
+    .company .section.ceo .innerWrap .text p.big {
+        font-size: 26px;
+        line-height: 40px;
+    }
+    .company .section.ceo .innerWrap .text p.ceo {
+        font-size: 22px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+
+    /* sidenav 각 각 위로 간격 70px 떨어트리기 */
+
+    header nav.mobile-nav .sidenav {
+        padding-top: 70px;
+    }
+
+    /* sidenav 각 각 폰트 사이즈 수정 */
+
+    header nav.mobile-nav .sidenav a {
+        font-size: 20px;
+    }
+
+    /*** main.html 조정 ***/
+    /* 첫번째, 네번째 화면 위치 조정 */
+
+    .main #section0 .mainVisual .main-txt,
+    .main #section3 .subVisual .main-txt {
+        left: 0;
+        transform: translate(0%, -50%);
+    }
+
+    /* 세번째 화면 위치 조정 */
+
+    .main #section2 .subVisual .main-txt {
+        left: 0;
+        right: 0;
+        transform: translate(0%, -50%);
+        text-align: right;
+    }
+
+    /* 첫번째 화면 내 이야기 ~ 나와산책 텍스트 폰트 크기, 줄 간격 조정 */
+
+    .section .main-txt p.title {
+        font-size: 28px;
+        line-height: 45px !important;
+    }
+
+    /* 첫번째 화면 누군가와 ~ 싶을때 텍스트 폰트 크기, 간격 조정 */
+
+    .main #section0 .mainVisual .main-txt p {
+        font-size: 20px;
+        padding-bottom: 30px;
+    }
+
+    /* 첫번째 화면 내 이야기 ~ 나와산책 텍스트 폰트 크기, 줄 간격 조정 */
+
+    .main #section0 .mainVisual .main-txt p.title {
+        font-size: 28px;
+        line-height: 40px !important;
+    }
+
+    /* 첫번째 화면 나와산책 텍스트 폰트 크기, 줄 간격 조정 */
+
+    .main #section0 .mainVisual .main-txt p.title span {
+        font-size: 40px;
+        line-height: 50px;
+    }
+    
+    /* app 이미지 세로 형태로 */
+
+    .main #section0 .mainVisual .main-txt .app a{
+        display: block;
+        margin-bottom: 16px;
+    }
+
+    /* 두번째 화면 어떤 ~ 사람 텍스트 줄 간격 조정 */
+
+    .main #section1 .main-txt p.title {
+        padding: 20px 0;
+        line-height: 45px;
+    }
+
+    /* 세번째 화면 문단 간격 조정 */
+
+    .main #section2 .main-txt p.title {
+        padding: 20px 0 0;
+    }
+
+    /* 세, 네번째 화면 문단, 줄 간격 조정 */
+
+    .main #section2 .main-txt p,
+    .main #section3 .main-txt p {
+        padding: 20px 0 70px;
+        line-height: 28px;
+    }
+
+    /* 세, 네번째 화면 버튼 안 텍스트 폰트 크기 조정 */
+
+    .main #section2 .subVisual .main-txt a,
+    .main #section3 .subVisual .main-txt a {
+        font-size: 14px;
+    }
+
+    /*** use.html 조정 ***/
+
+    /* 본문 텍스트 윗 내용 폰트 크기, 줄 간격 조정 */
+
+    .use .section .txtbox p {
+        font-size: 28px;
+        line-height: 40px;
+    }
+
+    /* 본문 텍스트 아래 내용 폰트 크기, 줄 간격 조정 */
+
+    .use .section .txtbox span {
+        font-size: 16px;
+        line-height: 24px;
+    }
+
+    /* 첫, 두번째 화면 이미지 조정 */
+
+    .use #section0 .img {
+        width: 45%;
+    }
+    .use #section1 .img {
+        width: 60%;
+    }
+
+    /* 본문 텍스트 위치 조정 */
+
+    .use #section1 .txtbox,
+    .use #section2 .txtbox,
+    .use #section3 .txtbox,
+    .use #section4 .txtbox {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 100%;
+        text-align: center;
+    }
+
+    /* 세, 네번째 이미지 조정 */
+
+    .use #section2 .img {
+        width: 60%;
+        left: 50%;
+        top: 90%;
+    }
+    .use #section3 .img {
+        width: 60%;
+    }
+    .use #section4 .img {
+        width: 60%;
+        left: 50%;
+        top: 90%;
+    }
+
+
+    /*** listener.html 수정 ***/
+
+    /* 첫번째 화면 폰 이미지 화면 비율 조정 */
+
+    .listener #section0 .img {
+        width: 100%;
+        bottom: 0% !important;
+    }
+    .listener #section0 .img > img {
+        width: 100%;
+    }
+
+    /* 첫번째 화면 텍스트 위치 위로부터 100px만큼 떨어트리기 */
+
+    .listener #section0 .main-txt {
+        padding-top: 100px;
+    }
+
+    /* 첫번째 화면 원하시는 ~ 만큼 텍스트 폰트 크기 조정 */
+
+    .listener #section0 .main-txt p {
+        font-size: 20px;
+    }
+
+    /* 첫번째 화면 이제 ~ 나와산책 텍스트 폰트 크기, 위치 조정 */
+
+    .listener #section0 .main-txt p.title {
+        font-size: 26px;
+        padding-top: 24px;
+    }
+
+    /* 첫번째 화면 나와산책 텍스트 폰트 크기, 줄 간격 조정 */
+
+    .listener #section0 .main-txt p.title span {
+        font-size: 32px;
+        line-height: 40px;
+    }
+
+    .listener .sub-img .list {
+        width: 90%;
+    }
+
+    /* 모든 화면 텍스트 p.title 폰트 크기, 줄 간격 조정 */
+
+    .listener .main-txt p.title {
+        font-size: 22px;
+        line-height: 30px !important;
+    }
+
+
+    /*** tip.html 조정 ***/
+
+    /* 첫번째 화면 고민 ~ 들때 텍스트 위치 조정 */
+
+    .tip .subVisual .txtboxWrap {
+        padding-top: 130px;
+    }
+
+    /* 첫번째 화면 아이콘 위치 조정 */
+
+    .tip .section .subVisual .imgbox .list > span {
+        width: 50px;
+        height: 50px;
+        top: 40%;
+    }
+    .tip .section .subVisual .imgbox .list > span img {
+        width: 100%;
+    }
+
+    /* 첫번째 화면 아이콘 텍스트 폰트 크기 조정 */
+
+    .tip .section .subVisual .imgbox .list > p {
+        font-size: 18px;
+    }
+
+    /* 첫번째 화면 고민 ~ 들 때 텍스트 폰트 크기, 줄 간격, 문단 간격 조정 */
+
+    .tip .subVisual .txtboxWrap .txtbox {
+        font-size: 24px;
+        line-height: 32px;
+    }
+    .tip .subVisual .txtboxWrap .sub_txtbox {
+        margin-top: 8px;
+        position: unset;
+        font-size: 16px;
+        line-height: 24px;
+    }
+
+
+    /*** company.html 조정 ***/
+
+    /* pc용 회사소개 텍스트 off */
+
+    .company .section.bg {
+        display: none;
+    }
+
+    /* mobile용 회사소개 텍스트 on */
+    
+    .company .section.bg.mb {
+        height: 300px;
+        background: url(Image/company_bg_mb.png) no-repeat center center;
+        background-size: cover;
+        display: table;
+        width: 100%;
+        text-align: center;
+        padding-top: 60px;
+    }
+
+    /* 회사소개 텍스트 화면 위치 조정 */
+
+    .company .section.bg {
+        height: 300px;
+        position: relative;
+        background-size: cover;
+    }
+
+    /* 회사소개 텍스트 폰트 크기, 줄 간격, 위치 조정 */
+
+    .company .section.bg p {
+        font-size: 32px;
+        line-height: 32px;
+        position: absolute;
+        left: 16px;
+        bottom: 40px;
+    }
+
+    /* ceo 인사말 텍스트 위치 조정 */
+
+    .company .section.titlebox .title {
+        text-align: left;
+        border-bottom: none;
+    }
+
+    /* ceo 인사말 텍스트 폰트 크기, 줄 간격 조정 */
+
+    .company .section.titlebox .title p {
+        font-size: 14px;
+        line-height: 14px;
+        padding: 50px 16px;
+    }
+
+
+    .company .section.ceo {
+        padding: 0;
+    }
+
+    /* pc용 본문 텍스트 off */
+
+    .company .section.ceo .innerWrap.pc {
+        display: none;
+    }
+
+    /* mobile용 텍스트 on */
+
+    .company .section.ceo .innerWrap.mb {
+        display: block;
+    }
+
+    /* 사람들이 원하는 바를 ~ 좋을텐데 텍스트 폰트 크기, 줄 간격, 위치 조정 */
+
+    .company .section.ceo .innerWrap.mb .big {
+        font-size: 20px;
+        font-weight: 500;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 1.5;
+        letter-spacing: -0.4px;
+        text-align: left;
+        color: #333;
+        padding: 0 16px 50px;
+        word-break: keep-all;
+    }
+    
+    /* profile 이미지 비율 조정 */
+
+    .company .section.ceo .innerWrap .profile .img {
+        width: 100%;
+    }
+    .company .section.ceo .innerWrap .profile .img img {
+        width: 100%;
+    }
+
+    /* 전체 텍스트 위치 조정 */
+
+    .company .section.ceo .innerWrap .text {
+        margin-top: 32px;
+    }
+
+    /* 2008년부터 ~ 선보였습니다. 텍스트 위치, 폰트 크기 조정 */
+
+    .company .section.ceo .innerWrap .text p {
+        margin-top: 16px;
+        font-size: 14px;
+    }
+
+    /* 사람과 ~ 연결하다 텍스트 폰트 크기, 굵기 조정 */
+
+    .company .section.ceo .innerWrap .text p.sub {
+        font-size: 16px;
+        font-weight: 500;
+    }
+
+    /* 대표이사 ~ 텍스트 폰트 크기, 굵기, 줄 간격 조정 */
+
+    .company .section.ceo .innerWrap .text p.ceo {
+        font-size: 14px;
+        font-weight: bold;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 3.57;
+        letter-spacing: -0.28px;
+        text-align: left;
+        color: #333;
+        margin: 60px 0 40px;
+    }
+
+    /* 싸인 화면 비율 조정 */
+
+    .company .section.ceo .innerWrap .text p.ceo img {
+        width: 74px;
+    }
+
+
+    /*** all-ft 부분 조정 ***/
+
+    /* 당신의 ~ 나와산책 텍스트 위치 조정 */
+
+    .all-ft .app-down .main-txt {
+        text-align: center;
+        padding-top: 15px;
+    }
+
+    /* app 로고 위치 조정 */
+
+    .all-ft .app-down .app {
+        text-align: center;
+        padding-bottom: 15px;
+    }
+
+    /* 당신의 ~ 들어드립니다 텍스트 폰트 크기, 줄 간격 조정 */
+
+    .section .main-txt p {
+        font-size: 14px;
+        line-height: 24px;
+        padding: 16px 16px 0;
+    }
+
+    /* 나와산책 텍스트 폰트 크기, 줄 간격 조정 */
+
+    .all-ft .app-down .main-txt p.title {
+        font-size: 26px;
+        line-height: 26px !important;
+        padding: 10px 16px;
+    }
+
+    /* app 로고 각 각 화면 비율 및 위치, 줄 간격 조정 */
+
+    .all-ft .app-down .app a {
+        width: 150px;
+        height: 40px;
+        line-height: 30px;
+        margin: 0 10px;
+    }
+
+    /*** footer 부분 조정 ***/
+
+    /* footer 전체 위치 조정 */
+
+    footer#footer {
+        padding: 25px 20px;
+    }
+
+    /* 고객센터 ~ 나와 산책 텍스트 폰트 크기, 위치 수정 */
+
+    footer#footer .txt .o-dep p {
+        font-size: 14px;
+        display: flex;
+        align-items: center;
+    }
+    footer#footer .txt .o-dep a {
+        display: flex;
+    }
+
+    /* 주식회사 ~ 기업제휴 텍스트 위치 조정 */
+
+    footer#footer .txt .tw-dep {
+        margin: 15px 0;
+    }
+
+    /* Copyright ~ Reserved 텍스트 폰트 크기, 줄 간격 조정 */
+
+    footer#footer .txt .th-dep {
+        font-size: 12px;
+        line-height: 12px;
+    }
+
+    /* logo 화면 비율 조정 */
+
+    footer#footer .logo .sns ul li,
+    footer#footer .logo .sns ul li a {
+        width: 32px;
+        height: 32px;
+    }
+
+    /* 서울 logo 화면 비율 조정 */
+    
+    footer#footer .logo .seoul img {
+        width: 90px;
+    }
+    
+}
+
+@media screen and (max-width: 320px) {
+
+    /* tip.html 아이콘들 화면 비율 조정 */
+
+    .tip .section .subVisual .imgbox .list > span {
+        width: auto;
+        height: 50px;
+        vertical-align: middle;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .tip .section .subVisual .imgbox .list > span img {
+        width: 100%;
+    }
+
+    /* tip.html 아이콘 텍스트들 폰트 크기, 위치 조정 */
+
+    .tip .section .subVisual .imgbox .list > p {
+        font-size: 14px;
+        margin-top: 16px;
+        padding: 0px 8px;
+    }
+
+
+    /* listener.html 전체 텍스트 위치 조정 */
+
+    .listener .main-txt p {
+        padding-top: 16px;
+    }
+    
+    /* listener.html 나와산책 텍스트 폰트 크기 조정 */
+
+    .listener #section0 .main-txt p.title span {
+        font-size: 30px;
+    }
+
+
+    /* footer 첫번째 문단 위치 조정 */
+
+    footer#footer .txt .o-dep {
+        margin-bottom: 16px;
+    }
+
+    /* footer 첫번째 문단 첫번째 문장 위치 조정 */
+
+    footer#footer .txt .o-dep a {
+        margin-right: 16px;
+    }
+    footer#footer .txt .o-dep b {
+        margin-right: 0;
+    }
+
+    /* footer 첫번째 문단 두번째 문장 텍스트 폰트 크기 조정 */
+
+    footer#footer .txt .o-dep span {
+        font-size: 13px;
+    }
+
+    /* footer 두번째 문단 off */
+
+    footer#footer .txt .tw-dep {
+        display: none;
+    }
+
+
+    /* all-ft logo 화면 비율 조정 */
+
+    .all-ft .app-down .app a {
+        width: 120px;
+        padding: 0 16px;
+    }
+    .all-ft .app-down .app a img {
+        width: 100%;
+    }
+}
+
+
+/*** mobile (세로 비율 기준) ***/
+
+@media screen and (max-height: 936px) and (min-height: 813px) {
+
+    
+    .listener #section0 .img {
+        bottom: -10%;
+    }
+    .listener .main-txt p.title {
+        font-size: 36px;
+        line-height: 44px !important;
+    }
+    .listener .main-txt p {
+        padding-top: 16px;
+    }
+}
+
+@media screen and (min-height: 700px) and (max-height: 823px) {
+    .tip .subVisual .txtboxWrap .txtbox {
+        font-size: 24px;
+        padding: 0;
+        position: relative;
+        top: 20%;
+    }
+    .tip .subVisual .txtboxWrap .sub_txtbox {
+        position: relative;
+    }
+
+
+    .listener #section0 .img {
+        bottom: -20%;
     }
 }
