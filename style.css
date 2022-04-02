@@ -15,16 +15,12 @@ div#wrap {
 }
 
 .section .innerWrap {
-  max-width: 1200px;
+  max-width: 1300px;
   margin: 0 auto;
   position: relative;
   height: 100%;
 }
-.section .innerWrap:after {
-  content: "";
-  display: block;
-  clear: both;
-}
+
 .section .main-txt p {
   font-size: 20px;
   line-height: 31px;
@@ -166,34 +162,32 @@ header nav.mobile-nav span {
 }
 
 /* mainVisual은 첫 번째 화면 */
+
 .main #section0 .mainVisual {
-  background: green; /*나중에 background-img:url()로 바꿔야함 */
-  background-size: cover; /* 가로 세로 비율 맞춰서 화면에 꽉 차게 함 */
+  background: linear-gradient(white 65%, #6df6ea 65%);
   height: 100%;
 }
-
-/* 첫 번째 화면에 있는 내용 전부  (내 이야기를 ~ 앱 로고까지) */
+.main #section0 #innerWrap0 {
+  display: flex;
+}
+/* 첫 번째 화면에 있는 텍스트(파란색 박스)  (내 이야기를 ~ 앱 로고까지) */
 .main #section0 .mainVisual .main-txt {
-  position: absolute; /* 위치 값이 클래스에 상속되지 않고 자유롭게 설정됨 */
-  top: 50%; /* 따라서 top, left와 같이 고정된 위치 부여 가능 */
-  left: 0;
-  transform: translate(
-    0,
-    -50%
-  ); /* transform: translate는 상대적인 위치 값을 부여 (X, Y) */
+  width: 50%;
+  height: 100%;
   background-color: rgb(53, 10, 206);
 }
 
 /* 첫 번째 화면에 있는 누군가와 ~ 말하고 싶을때(텍스트부분) */
 .main #section0 .mainVisual .main-txt p {
-  padding: 60px 0;
+  padding-top: 35%;
+  padding-left: 15%;
   color: #fff;
 }
 
 /* 내 이야기를 들어줄 사람 */
 .main #section0 .mainVisual .main-txt p.title {
-  padding: 0;
-  color: #fff;
+  padding-top: 0;
+  padding-left: 15%;
   font-weight: 400; /* 글자 굵기 */
 }
 
@@ -205,18 +199,19 @@ header nav.mobile-nav span {
   font-weight: 500;
   color: #fff;
   display: block;
+  padding-left: 33%;
 }
 
 /* app 전체 부분( 구글, 애플 ) */
 .main #section0 .mainVisual .innerWrap .app {
   text-align: center;
   padding-top: 64px;
+  padding-left: 48%;
 }
 
 /* app 각 부분 */
 .main #section0 .mainVisual .innerWrap .app a {
-  display: inline-block;
-  vertical-align: middle; /* 요소를 중앙에 배치 */
+  display: block;
   background: rgba(255, 255, 255, 0.8);
   width: 180px;
   height: 50px;
@@ -224,6 +219,7 @@ header nav.mobile-nav span {
   line-height: 40px;
   cursor: pointer;
   margin-right: 16px;
+  margin-top: 10px;
 }
 
 /* app 이미지 부분 */
@@ -231,137 +227,87 @@ header nav.mobile-nav span {
   vertical-align: middle;
 }
 
-/**** 두 번째 내용 어떤 이야기든 상관없습니다 부분 ****/
+/* 첫 번째 화면에 있는 그림(초록색 박스) */
+.main #section0 .mainVisual .imgbox {
+  width: 50%;
+  height: 100%;
+  background-color: green;
+}
+
+/* 폰 이미지 위치 */
+
+.main #section0 .mainVisual .imgbox .img {
+  padding-top: 35%;
+}
+
+/**** 두 번째 내용 언제 어디서든 부분 ****/
 
 .main #section1 {
   width: 100%;
   height: 1000px;
 }
 
+.main #section1 #innerWrap1 {
+  display: flex;
+}
+
 .main #section1 .subVisual {
-  background: orange; /* 나중에 background-img:url()로 바꿔야함 */
-  background-size: cover;
-}
-
-/* 두 번째 화면에 있는 내용 전부  어떤 ~ 들어드립니다 */
-.main #section1 .subVisual .main-txt {
-  position: absolute;
-  top: 0;
-  width: 100%;
-}
-
-/* 두 번째 화면에 있는 내용 중 어떤 ~ 사람 */
-.main #section1 .main-txt p.title {
-  padding: 125px 0 40px;
-  line-height: 50px; /* 글자 줄 간격 */
-  text-align: center;
-}
-
-/* 두 번째 화면에 있는 내용 중 대화가 ~ 들어드립니다 */
-.main #section1 .main-txt p {
-  text-align: center;
-}
-
-/**** 세 번째 내용 언제 어디서든 부분 ****/
-
-.main #section2 {
-  width: 100%;
-  height: 1000px;
-}
-
-.main #section2 .subVisual {
   background: skyblue; /* 나중에 background-img:url()로 바꿔야함 */
   background-size: cover;
 }
 
-/* 세 번째 화면에 있는 내용 전부  언제 ~ 이용 방법 */
-.main #section2 .subVisual .main-txt {
-  position: absolute;
-  top: 50%;
-  left: 68%;
-  transform: translate(-50%, -50%);
+/* 두 번째 화면에 있는 내용 전부  언제 ~ 이용 방법 */
+.main #section1 .subVisual .main-txt {
+  width: 50%;
+  background-color: pink;
 }
 
-/* 세 번째 화면에 있는 내용 중 언제 ~ 누구든지! */
-.main #section2 .main-txt p.title {
+/* 두 번째 화면에 있는 내용 중 언제 ~ 누구든지! */
+.main #section1 .main-txt p.title {
+  padding-top: 35%;
   font-size: 32px;
-  padding: 0;
 }
 
-/* 세 번째 화면에 있는 내용 중 이야기를 ~ 나눠보세요 */
-.main #section2 .main-txt p {
+/* 두 번째 화면에 있는 내용 중 자유롭게!, 누구든지! */
+.main #section1 .subVisual .main-txt p.title span {
+  text-decoration: underline;
+  font-size: 32px;
+  font-weight: 500;
+}
+
+/* 두 번째 화면에 있는 내용 중 이야기를 ~ 나눠보세요 */
+.main #section1 .main-txt p {
   line-height: 40px;
-  padding: 50px 0 90px;
+  padding-top: 40px;
 }
 
 /* 나와산책 이용방법 상호작용 버튼 만들기 */
-.main #section2 .subVisual .main-txt a {
+.main #section1 .subVisual .main-txt a {
+  margin-top: 20px;
   font-size: 16px;
   line-height: 16px;
-  border: solid 1px #535251; /* border: 테두리 */
+  border: solid 1px #535251;
+  border-radius: 7px;
+  box-shadow: 3px 3px 3px grey;
   padding: 10px 17px;
   color: #333333;
   cursor: pointer; /* 마우스 커서를 갖다대면 클릭 모양으로 바뀜 */
   display: inline-block;
-  transition: background 0.8s; /* 속성을 서서히 바꿈 */
 }
 
 /* 나와산책 이용방법 상호작용 */
-.main #section2 .subVisual .main-txt a:hover {
+.main #section1 .subVisual .main-txt a:hover {
   background: #333;
   color: #fff;
-  transition: background 0.8s;
 }
 
-/**** 네 번째 내용 다양한 리스너 부분 ****/
-
-.main #section3 {
-  width: 100%;
-  height: 1000px;
+.main #section1 .subVisual .imgbox {
+  background-color: red;
+  width: 50%;
 }
 
-.main #section3 .subVisual {
-  background: pink; /* 나중에 background-img:url()로 바꿔야함 */
-  background-size: cover;
-}
-
-/* 네 번째 화면에 있는 내용 전부  다양한 ~ 활용TIP */
-.main #section3 .subVisual .main-txt {
-  position: absolute;
-  top: 50%;
-  left: 160px;
-  transform: translate(-50%, -50%);
-}
-
-/* 네 번째 화면에 있는 내용 중 다양한 ~ 사용후기 */
-.main #section3 .main-txt p.title {
-  padding: 0;
-  line-height: 60px;
-}
-
-/* 네 번째 화면에 있는 내용 중 내 주변에 ~ 있어요 */
-.main #section3 .main-txt p {
-  padding: 50px 0 90px;
-  line-height: 40px;
-}
-
-/* 나와산책 활용TIP 상호작용 버튼 만들기 */
-.main #section3 .subVisual .main-txt a {
-  font-size: 16px;
-  line-height: 16px;
-  border: solid 1px #535251;
-  padding: 10px 17px;
-  color: #333333;
-  cursor: pointer;
-  display: inline-block;
-  transition: background 0.8s;
-}
-
-/* 나와산책 활용TIP 상호작용 */
-.main #section3 .subVisual .main-txt a:hover {
-  background: #333;
-  color: #fff;
-  transition: background 0.8s;
+.main #section1 .subVisual .imgbox .img {
+  padding: 25%;
 }
 
 /*****use*****/
@@ -1390,18 +1336,6 @@ footer#footer .logo .seoul {
   .section .innerWrap {
     max-width: 100%;
     width: 100%;
-  }
-
-  /* home.html 화면 텍스트 비율 조정 */
-
-  .main .mainVisual .main-txt,
-  .main .subVisual .main-txt {
-    margin: 0 20px;
-  }
-  .main #section1 .mainVisual .main-txt,
-  .main #section1 .subVisual .main-txt {
-    margin: 0;
-    top: 70px;
   }
 
   /** use.html 화면 텍스트 비율 조정 **/
