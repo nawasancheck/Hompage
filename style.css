@@ -48,8 +48,8 @@ header {
   top: 0;
   z-index: 999; /* z-index는 ppt에 맨앞으로 배치 맨뒤로 배치와같은 역할임*/
   width: 100%; /*위에 header 부분 가로를 100%로 지정*/
-  height: 60px; /*위에 header 부분 세로를 60px로 지정*/
-  background: rgba(0, 0, 0, 0.1); /*살짝 투명도 background 넣어줌 */
+  height: 58px; /*위에 header 부분 세로를 60px로 지정*/
+  border-bottom: solid 2px #b5b3b3;
 }
 
 /*header 부분 ANYMAN 이미지 위치등 지정하는 부분*/
@@ -61,7 +61,7 @@ header > a {
 
   width: 140px;
   height: 24px;
-  background: url("나와산책 로고") no-repeat;
+  background: url(Image/nawasancheck-logo.svg) no-repeat;
   cursor: pointer; /*ANYMAN글씨 클릭시 마우스 포인터모양 나오도록 */
 }
 
@@ -83,7 +83,7 @@ header nav.pc-nav {
     padding:10px 5px; => top, bottom : 10px / left, right : 5px 값으로 설정
     padding:10px 20px 30px 40px; => top : 10px, right : 20px, bottom : 30px, left : 40px 값으로 설정
 */
-  background-color: black; /*이부분 일단 표시하기위해 넣어둠 (나중에 뺄것)*/
+  background-color: white; /*이부분 일단 표시하기위해 넣어둠 (나중에 뺄것)*/
 }
 
 /*"나와산책" ~ "회사소개" 이부분*/
@@ -1018,9 +1018,40 @@ header nav.mobile-nav span {
 
 /*****company 클래스 부분*****/
 
+
+.company #section0 {           
+  width: 100%;
+  height: 800px;
+}
+
+.company #section0 .mainVisual { 
+  background: url(image/main-bg01.png) no-repeat 50% 50%;
+  background-size: cover;
+  height: 100%;
+}
+
+.company #section0 .mainVisual .main-txt p {
+  vertical-align: middle;
+  text-align: center;
+  color: rgb(90, 90, 90);
+}
+
+.company #section0 .mainVisual .main-txt p.title {
+  vertical-align: middle;
+  text-align: center;
+  color: rgb(90, 90, 90);
+  padding-top: 0;
+  font-weight: 400; /* 글자 굵기 */
+}
+
+
+/*------------------------*/
+
+
+
 /*회사소개 (background부분) */
 .company .section.bg {
-  height: 264px;
+  height: 260px;
   background: url("Image/company_bg.jpg") no-repeat center center;
   background-size: cover;
   display: table;
@@ -1041,6 +1072,7 @@ header nav.mobile-nav span {
   font-size: 40px;
   line-height: 40px;
   font-weight: 500;
+  color: white;
 }
 
 /*CEO 인사말 글씨 가운데 정렬해줌*/
@@ -1892,7 +1924,7 @@ footer#footer .logo .seoul {
 
   .company .section.bg.mb {
     height: 300px;
-    background: url(Image/company_bg_mb.png) no-repeat center center;
+    background: url(Image/company_bg.jpg) no-repeat center center;
     background-size: cover;
     display: table;
     width: 100%;
@@ -1916,6 +1948,7 @@ footer#footer .logo .seoul {
     position: absolute;
     left: 16px;
     bottom: 40px;
+    
   }
 
   /* ceo 인사말 텍스트 위치 조정 */
