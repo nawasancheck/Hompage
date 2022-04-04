@@ -161,52 +161,65 @@ header nav.mobile-nav span {
   height: 1000px;
 }
 
+.main #section0 .mainVisual .main-txt .img {
+  position: absolute;
+  top: 75%;
+  left: 70%;
+  transform: translate(0, -50%);
+}
 /* mainVisual은 첫 번째 화면 */
-
 .main #section0 .mainVisual {
   background: linear-gradient(white 65%, #6df6ea 65%);
+  /*나중에 background-img:url()로 바꿔야함 */
+  background-size: cover;
+  /* 가로 세로 비율 맞춰서 화면에 꽉 차게 함 */
   height: 100%;
 }
-.main #section0 #innerWrap0 {
-  display: flex;
-}
-/* 첫 번째 화면에 있는 텍스트(파란색 박스)  (내 이야기를 ~ 앱 로고까지) */
+
+/* 첫 번째 화면에 있는 내용 전부  (내 이야기를 ~ 앱 로고까지) */
 .main #section0 .mainVisual .main-txt {
-  width: 50%;
-  height: 100%;
-  background-color: rgb(53, 10, 206);
+  width: 100%;
+  position: absolute;
+  /* 위치 값이 클래스에 상속되지 않고 자유롭게 설정됨 */
+  top: 40%;
+  /* 따라서 top, left와 같이 고정된 위치 부여 가능 */
+  left: 0;
+  transform: translate(0,-50%);
+  /* transform: translate는 상대적인 위치 값을 부여 (X, Y) */
 }
 
 /* 첫 번째 화면에 있는 누군가와 ~ 말하고 싶을때(텍스트부분) */
 .main #section0 .mainVisual .main-txt p {
-  padding-top: 35%;
-  padding-left: 15%;
-  color: #fff;
+  padding-left: 10%;
+  color: #000;
 }
 
 /* 내 이야기를 들어줄 사람 */
 .main #section0 .mainVisual .main-txt p.title {
-  padding-top: 0;
-  padding-left: 15%;
-  font-weight: 400; /* 글자 굵기 */
+  text-align: end;
+  padding-top: 1%;
+  padding-right: 58%;
+  color: #000;
+  font-weight: 400;
+  /* 글자 굵기 */
 }
 
 /* 나와산책 텍스트 부분*/
 .main #section0 .mainVisual .main-txt p.title span {
   font-size: 60px;
   line-height: 70px;
-  letter-spacing: 0; /* 문자 간격 */
+  letter-spacing: 0;
+  /* 문자 간격 */
   font-weight: 500;
-  color: #fff;
+  color: #000;
   display: block;
-  padding-left: 33%;
 }
 
 /* app 전체 부분( 구글, 애플 ) */
 .main #section0 .mainVisual .innerWrap .app {
   text-align: center;
   padding-top: 64px;
-  padding-left: 48%;
+  padding-left: 30%;
 }
 
 /* app 각 부분 */
@@ -215,11 +228,11 @@ header nav.mobile-nav span {
   background: rgba(255, 255, 255, 0.8);
   width: 180px;
   height: 50px;
+  border: 1px solid #6df6ea;
   border-radius: 30px;
   line-height: 40px;
   cursor: pointer;
-  margin-right: 16px;
-  margin-top: 10px;
+  margin-bottom: 6px;
 }
 
 /* app 이미지 부분 */
@@ -227,87 +240,121 @@ header nav.mobile-nav span {
   vertical-align: middle;
 }
 
-/* 첫 번째 화면에 있는 그림(초록색 박스) */
-.main #section0 .mainVisual .imgbox {
-  width: 50%;
-  height: 100%;
-  background-color: green;
-}
+/**** 세 번째 내용 언제 어디서든 부분 ****/
 
-/* 폰 이미지 위치 */
-
-.main #section0 .mainVisual .imgbox .img {
-  padding-top: 35%;
-}
-
-/**** 두 번째 내용 언제 어디서든 부분 ****/
-
-.main #section1 {
+.main #section2 {
   width: 100%;
   height: 1000px;
 }
 
-.main #section1 #innerWrap1 {
-  display: flex;
-}
-
-.main #section1 .subVisual {
-  background: skyblue; /* 나중에 background-img:url()로 바꿔야함 */
+.main #section2 .subVisual {
+  /* 나중에 background-img:url()로 바꿔야함 */
   background-size: cover;
 }
 
-/* 두 번째 화면에 있는 내용 전부  언제 ~ 이용 방법 */
-.main #section1 .subVisual .main-txt {
-  width: 50%;
-  background-color: pink;
+.main #section2 .subVisual .img {
+  position: absolute;
+  top: 0%;
+  right: 50%;
+  padding-right: 10%;
 }
 
-/* 두 번째 화면에 있는 내용 중 언제 ~ 누구든지! */
-.main #section1 .main-txt p.title {
-  padding-top: 35%;
+/* 세 번째 화면에 있는 내용 전부  언제 ~ 이용 방법 */
+.main #section2 .subVisual .main-txt {
+  width: 100%;
+  padding-left: 70%;
+  position: absolute;
+  top: 40%;
+  /* 따라서 top, left와 같이 고정된 위치 부여 가능 */
+  left: 0;
+  transform: translate(0, -50%);
+  /* transform: translate는 상대적인 위치 값을 부여 (X, Y) */
+}
+
+/* 세 번째 화면에 있는 내용 중 언제 ~ 누구든지! */
+.main #section2 .main-txt p.title {
   font-size: 32px;
+  padding: 0;
 }
 
-/* 두 번째 화면에 있는 내용 중 자유롭게!, 누구든지! */
-.main #section1 .subVisual .main-txt p.title span {
-  text-decoration: underline;
-  font-size: 32px;
-  font-weight: 500;
-}
-
-/* 두 번째 화면에 있는 내용 중 이야기를 ~ 나눠보세요 */
-.main #section1 .main-txt p {
+/* 세 번째 화면에 있는 내용 중 이야기를 ~ 나눠보세요 */
+.main #section2 .main-txt p {
   line-height: 40px;
-  padding-top: 40px;
+  padding: 50px 0 90px;
 }
 
 /* 나와산책 이용방법 상호작용 버튼 만들기 */
-.main #section1 .subVisual .main-txt a {
-  margin-top: 20px;
+.main #section2 .subVisual .main-txt a {
   font-size: 16px;
   line-height: 16px;
   border: solid 1px #535251;
-  border-radius: 7px;
-  box-shadow: 3px 3px 3px grey;
+  /* border: 테두리 */
   padding: 10px 17px;
   color: #333333;
-  cursor: pointer; /* 마우스 커서를 갖다대면 클릭 모양으로 바뀜 */
+  cursor: pointer;
+  /* 마우스 커서를 갖다대면 클릭 모양으로 바뀜 */
   display: inline-block;
+  transition: background 0.8s;
+  /* 속성을 서서히 바꿈 */
 }
 
 /* 나와산책 이용방법 상호작용 */
-.main #section1 .subVisual .main-txt a:hover {
+.main #section2 .subVisual .main-txt a:hover {
   background: #333;
   color: #fff;
+  transition: background 0.8s;
 }
 
-.main #section1 .subVisual .imgbox {
-  background-color: red;
-  width: 50%;
+/**** 네 번째 내용 다양한 리스너 부분 ****/
+
+.main #section3 {
+  width: 100%;
+  height: 1000px;
 }
 
-.main #section1 .subVisual .imgbox .img {
-  padding: 25%;
+.main #section3 .subVisual {
+  background: pink;
+  /* 나중에 background-img:url()로 바꿔야함 */
+  background-size: cover;
+}
+
+/* 네 번째 화면에 있는 내용 전부  다양한 ~ 활용TIP */
+.main #section3 .subVisual .main-txt {
+  position: absolute;
+  top: 50%;
+  left: 160px;
+  transform: translate(-50%, -50%);
+}
+
+/* 네 번째 화면에 있는 내용 중 다양한 ~ 사용후기 */
+.main #section3 .main-txt p.title {
+  padding: 0;
+  line-height: 60px;
+}
+
+/* 네 번째 화면에 있는 내용 중 내 주변에 ~ 있어요 */
+.main #section3 .main-txt p {
+  padding: 50px 0 90px;
+  line-height: 40px;
+}
+
+/* 나와산책 활용TIP 상호작용 버튼 만들기 */
+.main #section3 .subVisual .main-txt a {
+  font-size: 16px;
+  line-height: 16px;
+  border: solid 1px #535251;
+  padding: 10px 17px;
+  color: #333333;
+  cursor: pointer;
+  display: inline-block;
+  transition: background 0.8s;
+}
+
+/* 나와산책 활용TIP 상호작용 */
+.main #section3 .subVisual .main-txt a:hover {
+  background: #333;
+  color: #fff;
+  transition: background 0.8s;
 }
 
 /*****use*****/
@@ -350,6 +397,11 @@ header nav.mobile-nav span {
   display: block;
 }
 
+.use .section .img {
+  border: 13px solid #e9e9e9;
+  border-radius: 55px;
+}
+
 /**** 첫 번째 화면 ****
 
 /* 첫 번째 화면 배경 설정 */
@@ -357,7 +409,7 @@ header nav.mobile-nav span {
 .use #section0 .subVisual {
   width: 100%;
   height: 1000px;
-  background: green;
+  background: url("Image/use-background1.jpg");
   background-size: cover;
 }
 
@@ -369,14 +421,12 @@ header nav.mobile-nav span {
   left: 50%;
   transform: translate(-50.2%, -50.8%);
   z-index: 10;
-  border-radius: 55px;
-  box-shadow: 30px 30px 40px 0px rgba(0, 0, 0, 0.25);
 }
 
 /* 첫 번째 좌측 화면 배경 설정 */
 
 .use #section0 .row2.s1 {
-  background: rgba(0, 0, 0, 0.28); /* 배경 불투명 */
+  width: 60%;
 }
 
 /* 첫 번째 화면 배경 설정 ( 대화가 필요한 모든 순간, ) 화면*/
@@ -384,29 +434,38 @@ header nav.mobile-nav span {
 .use #section0 .row2.s1 .txtbox {
   left: 0;
   right: 225px;
-  transform: none;
-  width: auto;
-  text-align: right;
+  text-align: left;
   position: absolute;
-  top: 50%;
+  top: 40%;
+  text-align: center;
+}
+
+.use #section0 .row2.s2 {
+  width: 40%;
+  background: white;
 }
 
 /* 첫 번째 화면 ( 나와산책으로 해결 ) 화면 */
 
 .use #section0 .row2.s2 .txtbox {
-  left: 225px;
-  transform: none;
-  width: auto;
-  text-align: left;
   position: absolute;
-  top: 50%;
+  top: 40%;
+  left: 10%;
 }
 
 /* 첫 번째 화면 모든 텍스트 ( 대화가 ~ 해결 ) 설정  */
 
 .use #section0 .txtbox p {
   font-size: 30px;
-  line-height: 40px;
+  line-height: 50px;
+  color: #fff;
+  letter-spacing: -1px;
+  font-weight: 400;
+}
+
+.use #section0 .txtbox span {
+  font-size: 50px;
+  line-height: 50px;
   color: #fff;
   letter-spacing: -1px;
   font-weight: 400;
@@ -415,66 +474,59 @@ header nav.mobile-nav span {
 /* 첫 번째 화면 두 번째 텍스트 ( 나와산책으로 해결 ) 설정*/
 
 .use #section0 .s2 .txtbox p {
-  font-size: 40px;
-  line-height: 40px;
-  letter-spacing: 0;
+  font-size: 30px;
+  line-height: 30px;
+  letter-spacing: 1px;
   font-weight: 500;
+  color: #000;
 }
 
-/* .use #section0 .s2 .txtbox p b {
-    font-size: 40px;
-    line-height: 40px;
-    letter-spacing: 0;
-    font-weight: bold;
-} */
+.use #section0 .s2 .txtbox span {
+  padding-top: 10%;
+  font-size: 20px;
+  line-height: 30px;
+  letter-spacing: 1px;
+  font-weight: 500;
+  color: #000;
+}
 
 /**** 두 번째 화면 ****/
 
 /* 두 번째 화면 배경 설정 */
 
-.use #section1 .subVisual {
+.use #section2 .subVisual {
   width: 100%;
   height: 1000px;
-  background: orange;
+}
+
+/* 두 번째 우측 화면 배경 설정 */
+
+.use #section2 .row2.s1 {
+  background: white;
+}
+
+.use #section2 .row2.s2 {
+  background: url("Image/use-background2.png");
   background-size: cover;
 }
 
-/* 두 번째 좌측 화면 배경 설정 */
+/* 두 번째 화면 폰 이미지 설정 */
 
-.use #section1 .row2.s1 {
-  background: rgba(255, 255, 255, 0.8);
-}
 
-/* 두 번째 화면 폰 모양 이미지 설정 */
-
-.use #section1 .img {
+.use #section2 .img {
   position: absolute;
   top: 50%;
   transform: translate(-50.2%, -50.8%);
-  right: 0;
-  border-radius: 55px;
-  box-shadow: 30px 30px 40px 0px rgba(0, 0, 0, 0.25);
+  left: 0%;
 }
 
-/* 이미지 옆에 글씨를 새기는 css 필요하면 쓸 수 있음 */
+/* 두 번째 화면 모든 텍스트 ( 비밀유지 ~ 후기 ) 위치 설정 */
 
-/* .use #section1 .img:before {
-    content: "도움이필요할때, 애니맨";
-    position: absolute;
-    left: -150px;
-    bottom: 125px;
-    transform: rotate(-90deg);
-    font-size: 24px;
-    color: rgba(51, 51, 51, 0.1);
-    font-family: "S-CoreDream-3Light";
-} */
-
-/* 두 번째 화면 모든 텍스트 ( 내 주변에 ~ 찾아보세요 ) 위치 설정 */
-
-.use #section1 .txtbox {
+.use #section2 .txtbox {
+  text-align: end;
   position: absolute;
   top: 50%;
-  left: 220px;
+  left: 55%;
   transform: translate(-50%, -50%);
 }
 
@@ -482,141 +534,89 @@ header nav.mobile-nav span {
 
 /* 세 번째 화면 배경 설정 */
 
-.use #section2 .subVisual {
+.use #section3 .subVisual {
   width: 100%;
   height: 1000px;
-  background: pink;
-  background-size: cover;
 }
 
-/* 세 번째 우측 화면 배경 설정 */
+/* 세 번째  화면 배경 설정 */
 
-.use #section2 .row2.s2 {
-  background: rgba(48, 49, 61, 0.8);
+.use #section3 .row2.s2 {
+  background: white;
+}
+
+.use #section3 .row2.s1 {
+  background: url("Image/use-background3.png");
+  background-size: cover;
 }
 
 /* 세 번째 화면 폰 이미지 설정 */
 
-.use #section2 .img {
+.use #section3 .img {
   position: absolute;
   top: 50%;
+  left: 100%;
+  z-index: 10;
   transform: translate(-50.2%, -50.8%);
-  left: 315px;
-  border-radius: 55px;
-  box-shadow: 30px 30px 40px 0px rgba(0, 0, 0, 0.25);
 }
 
-/* .use #section2 .img:before {
-    content: "도움이필요할때, 애니맨";
-    position: absolute;
-    right: -150px;
-    top: 125px;
-    transform: rotate(90deg);
-    font-size: 24px;
-    color: rgba(255, 255, 255, 0.05);
-    font-family: "S-CoreDream-3Light";
-} */
+/* 세 번째 화면 모든 텍스트 ( 부담없는 ~ 산책 ) 위치 설정 */
 
-/* 세 번째 화면 모든 텍스트 ( 비밀유지 ~ 후기 ) 위치 설정 */
-
-.use #section2 .txtbox {
+.use #section3 .txtbox {
   position: absolute;
   top: 50%;
-  right: -10%;
-  transform: translate(-50%, -50%);
+  left: 40%;
 }
 
 /**** 네 번째 화면 ****/
 
 /* 네 번째 화면 배경 설정 */
 
-.use #section3 .subVisual {
-  width: 100%;
-  height: 1000px;
-  background: skyblue;
-  background-size: cover;
-}
-
-/* 네 번째 좌측 화면 배경 설정 */
-
-.use #section3 .row2.s1 {
-  background: rgba(255, 255, 255, 0.5);
-}
-
-/* 네 번째 화면 폰 이미지 설정 */
-
-.use #section3 .img {
-  position: absolute;
-  top: 50%;
-  transform: translate(-50.2%, -50.8%);
-  right: 0;
-  border-radius: 55px;
-  box-shadow: 30px 30px 40px 0px rgba(0, 0, 0, 0.25);
-}
-
-/* .use #section3 .img:before {
-    content: "도움이필요할때, 애니맨";
-    position: absolute;
-    left: -150px;
-    bottom: 125px;
-    transform: rotate(-90deg);
-    font-size: 24px;
-    color: rgba(51, 51, 51, 0.1);
-    font-family: "S-CoreDream-3Light";
-} */
-
-/* 네 번째 화면 모든 텍스트 ( 부담없는 ~ 산책 ) 위치 설정 */
-
-.use #section3 .txtbox {
-  position: absolute;
-  top: 50%;
-  left: 220px;
-  transform: translate(-50%, -50%);
-}
-
-/**** 다섯 번째 화면 ****/
-
-/* 다섯 번째 화면 배경 설정 */
-
 .use #section4 .subVisual {
   width: 100%;
   height: 1000px;
-  background: gray;
+  background: url("Image/use-background4.jpg");
   background-size: cover;
 }
 
-/* 다섯 번째 화면 폰 이미지 설정 */
+.use #section4 .subVisual::before {
+  content: "";
+  opacity: 0.5;
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  background-color: #000;
+}
+
+/* 네 번째 화면 폰 이미지 설정 */
 
 .use #section4 .img {
   position: absolute;
   top: 50%;
   transform: translate(-50.2%, -50.8%);
-  left: 315px;
-  border-radius: 55px;
-  box-shadow: 30px 30px 40px 0px rgba(0, 0, 0, 0.25);
+  left: 0%;
 }
 
-/* .use #section4 .img:before {
-    content: "도움이필요할때, 애니맨";
-    position: absolute;
-    right: -150px;
-    top: 125px;
-    transform: rotate(90deg);
-    font-size: 24px;
-    color: rgba(255, 255, 255, 0.05);
-    font-family: "S-CoreDream-3Light";
-} */
+/* 네 번째 화면 모든 텍스트 ( 예약완료 ~ 간편하게 ) 위치 설정 */
 
-/* 다섯 번째 화면 모든 텍스트 ( 예약완료 ~ 간편하게 ) 위치 설정 */
-
-.use #section4 .txtbox {
+.use #section4 .txtbox p{
+  text-align: end;
   position: absolute;
-  top: 50%;
-  right: 0%;
+  top: 40%;
+  right: 10%;
   transform: translate(-50%, -50%);
 }
 
-/* 다섯 번째 화면 모든 텍스트 ( 예약완료 ~ 간편하게 ) 설정 */
+.use #section4 .txtbox span {
+  position: absolute;
+  top: 60%;
+  right: -60%;
+  transform: translate(-50%, -50%);
+}
+
+/* 네 번째 화면 모든 텍스트 ( 예약완료 ~ 간편하게 ) 설정 */
 
 .use #section4 .txtbox p,
 .use #section4 .txtbox span {
@@ -1362,6 +1362,10 @@ footer#footer .logo .seoul {
   .listener #section4 .main-txt {
     padding-top: 100px;
   }
+
+  .use #section4 .txtbox span {
+    right: -90%;
+  }
 }
 
 @media screen and (max-width: 1200px) {
@@ -1372,6 +1376,13 @@ footer#footer .logo .seoul {
 
   /** use.html 화면 텍스트 비율 조정 **/
 
+  .use #section0 .row2.s1 {
+    width: 50%;
+  }
+
+  .use #section0 .row2.s2 {
+    width: 50%;
+  }
   /* 첫 번째 화면 왼쪽 텍스트 */
 
   .use #section0 .row2.s1 .txtbox {
@@ -1389,6 +1400,10 @@ footer#footer .logo .seoul {
   .use #section0 .s2 .txtbox p,
   .use #section0 .s2 .txtbox p b {
     font-size: 35px;
+  }
+
+  .use #section4 .txtbox span {
+    right: -100%;
   }
 
   /* tip.html 화면 사이드 비율 꽉차게 */
@@ -1466,8 +1481,19 @@ footer#footer .logo .seoul {
     text-align: right;
   }
 
+  .main #section2 .subVisual .main-txt p.title {
+    font-size: 24px;
+  }
+
   /* use.html 모든 화면, 텍스트 비율 조정 */
 
+  .use #sction0 .row2.s1 {
+    width: 100%;
+  }
+
+  .use #section0 .row2.s2 {
+    width: 100%;
+  }
   .section .row2 {
     width: 100%;
     height: 50%;
@@ -1486,7 +1512,8 @@ footer#footer .logo .seoul {
     position: absolute;
     text-align: center;
     width: 100%;
-    top: 25%;
+    top: 15%;
+    left: 50%;
   }
 
   /* use.html 나와산책으로 해결, 이미지 아래로 배치 */
@@ -1504,6 +1531,8 @@ footer#footer .logo .seoul {
   .use #section4 .row2.s2 {
     overflow: hidden; /* overflow: 콘텐츠가 커서 요소내에 모두 못 보여줄 때 어떻게 보여주는 지  ( hidden: 넘치는 부분 자름 ) */
   }
+
+
 
   /* use.html 두 번째 화면 폰 이미지 가운데로 설정 */
 
@@ -1550,6 +1579,10 @@ footer#footer .logo .seoul {
     font-size: 18px;
   }
 
+  .use #section4 .txtbox span {
+    text-align: end;
+    padding: 57%;
+  }
   /* listener.html 첫 번째 화면 조정 */
 
   .listener #section0 .main-txt {
@@ -1597,19 +1630,17 @@ footer#footer .logo .seoul {
 }
 
 @media screen and (max-width: 768px) {
-  /* use.html 모든 화면 상단선 기준 아래로 100%의 위치로 이동 */
 
-  .use #section1 .img {
-    top: 100%;
+  .main #section2 .subVisual .main-txt p.title {
+    font-size: 18px;
   }
-  .use #section2 .img {
-    top: 100%;
+
+  .use #section0 .row2.s1 .txtbox p {
+    font-size: 20px;
   }
-  .use #section3 .img {
-    top: 100%;
-  }
-  .use #section4 .img {
-    top: 100%;
+
+  .use #section0 .row2.s1 .txtbox span {
+    font-size: 30px;
   }
 
   /* imgbox( 4 영역으로 나눠 놓은 이미지 ) 100% > 60% */
@@ -1725,6 +1756,7 @@ footer#footer .logo .seoul {
 
   .main #section0 .mainVisual .main-txt p.title {
     font-size: 28px;
+    text-align: center;
     line-height: 40px !important;
   }
 
@@ -1735,6 +1767,12 @@ footer#footer .logo .seoul {
     line-height: 50px;
   }
 
+  .main #section0 .mainVisual .main-txt .app {
+    position: absolute;
+    right: 50%;
+    top: 70%;
+  }
+
   /* app 이미지 세로 형태로 */
 
   .main #section0 .mainVisual .main-txt .app a {
@@ -1742,31 +1780,22 @@ footer#footer .logo .seoul {
     margin-bottom: 16px;
   }
 
-  /* 두번째 화면 어떤 ~ 사람 텍스트 줄 간격 조정 */
-
-  .main #section1 .main-txt p.title {
-    padding: 20px 0;
-    line-height: 45px;
-  }
-
   /* 세번째 화면 문단 간격 조정 */
 
   .main #section2 .main-txt p.title {
-    padding: 20px 0 0;
+    line-height: 28px;
   }
 
   /* 세, 네번째 화면 문단, 줄 간격 조정 */
 
-  .main #section2 .main-txt p,
-  .main #section3 .main-txt p {
-    padding: 20px 0 70px;
+  .main #section2 .main-txt p {
+    font-size: 13px;
     line-height: 28px;
   }
 
   /* 세, 네번째 화면 버튼 안 텍스트 폰트 크기 조정 */
 
-  .main #section2 .subVisual .main-txt a,
-  .main #section3 .subVisual .main-txt a {
+  .main #section2 .subVisual .main-txt a {
     font-size: 14px;
   }
 
@@ -1786,15 +1815,6 @@ footer#footer .logo .seoul {
     line-height: 24px;
   }
 
-  /* 첫, 두번째 화면 이미지 조정 */
-
-  .use #section0 .img {
-    width: 45%;
-  }
-  .use #section1 .img {
-    width: 60%;
-  }
-
   /* 본문 텍스트 위치 조정 */
 
   .use #section1 .txtbox,
@@ -1809,20 +1829,8 @@ footer#footer .logo .seoul {
     text-align: center;
   }
 
-  /* 세, 네번째 이미지 조정 */
-
-  .use #section2 .img {
-    width: 60%;
-    left: 50%;
-    top: 90%;
-  }
-  .use #section3 .img {
-    width: 60%;
-  }
-  .use #section4 .img {
-    width: 60%;
-    left: 50%;
-    top: 90%;
+  .use #section4 .txtbox span {
+    padding-bottom: 25%;
   }
 
   /*** listener.html 수정 ***/
