@@ -637,6 +637,10 @@ header nav.mobile-nav span {
 
 /**** listener 공통 ****/
 
+.listener #section2 .main-txt .text2-mb {
+  display: none;
+}
+
 /* 사진 가운데로 정렬 */
 
 .listener .subVisual {
@@ -655,70 +659,17 @@ header nav.mobile-nav span {
   font-size: 40px;
   line-height: 60px;
   color: #3c3c3c;
-  padding-top: 0;
+  padding-top: 5%;
   font-weight: 500;
 }
 
 /* 전체 sub 텍스트 설정 */
 
 .listener .main-txt p {
-  font-size: 20px;
-  line-height: 30px;
+  font-size: 30px;
+  line-height: 40px;
   padding-top: 30px;
   color: #3c3c3c;
-}
-
-/**** 첫 번째 화면 ****/
-
-/* 첫 번째 화면 (원하시는 ~ 나와산책) 배경 설정 */
-
-.listener #section0 {
-  background: url(Image/listener-bg01.png);
-  background-size: cover;
-}
-
-/* 첫 번째 화면 (원하시는 ~ 나와산책) 텍스트 설정 */
-
-.listener #section0 .main-txt {
-  text-align: center;
-  position: absolute;
-  top: 25%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
-/* 첫 번째 화면 (원하시는 ~ 만큼만) 텍스트 설정 */
-
-.listener #section0 .main-txt p {
-  font-size: 20px;
-  padding: 0;
-}
-
-/* 첫 번째 화면 (이제 ~ 나와산책) 텍스트 설정 */
-
-.listener #section0 .main-txt p.title {
-  font-size: 40px;
-  line-height: 60px;
-  font-weight: bold;
-  padding-top: 50px;
-}
-
-/* 첫 번째 화면 (나와산책) 텍스트 설정 */
-
-.listener #section0 .main-txt p.title span {
-  color: #0956be;
-  font-weight: bold;
-  display: block;
-  font-size: 50px;
-}
-
-/* 첫 번째 화면 폰 이미지 설정 */
-
-.listener #section0 .img {
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translate(-50%, 0%);
 }
 
 /**** 두 번째 화면 ****/
@@ -732,83 +683,40 @@ header nav.mobile-nav span {
   margin-top: 50px;
 }
 
+.listener #section1 .imgbox {
+  display: flex;
+}
+
 /* 두 번째 화면 전체 사진 설정 */
 
-.listener #section1 .sub-img {
+.listener #section1 .img {
+  width: 33%;
+}
+
+.listener #section1 .txtbox {
   display: flex;
+
+}
+
+
+.listener #section1 .txtbox p.title{
+  width: 100%;
   text-align: center;
-}
-
-/* 두 번째 화면 첫 번째 사진 설정 */
-
-.listener #section1 .list:nth-child(1) {
-  background: green;
-  height: 400px;
-  flex: 1;
-}
-
-/* 두 번째 화면 두 번째 사진 설정 */
-
-.listener #section1 .list:nth-child(2) {
-  background: pink;
-  height: 400px;
-  flex: 1;
-}
-
-/* 두 번째 화면 세 번째 사진 설정 */
-
-.listener #section1 .list:nth-child(3) {
-  background: orange;
-  height: 400px;
-  flex: 1;
-}
-
-/* 두 번째 화면 전체 사진 내용(텍스트) 설정 */
-
-.listener #section1 .sub-txt {
-  display: flex;
-  text-align: center;
-  margin-top: 20px;
-
   font-size: 20px;
-  line-height: 30px;
-  padding-top: 30px;
-  color: #3c3c3c;
-}
-
-/* 두 번째 화면 전체 사진 내용 중 title 부분(텍스트) 설정 - 자유롭게 ~ , 원하는 ~ , 활동한 ~ */
-
-.listener #section1 .sub-title {
-  font-size: 30px;
-  line-height: 60px;
-  color: #3c3c3c;
+  line-height: 40px;
   padding-top: 0;
-  font-weight: 500;
+
 }
 
-/* 두 번째 화면 첫 번째 사진 내용(텍스트) 설정 - 나의 ~ 있어요 */
 
-.listener #section1 .list:nth-child(1) {
-  flex: 1;
+.listener #section1 .txtbox p.title span {
+  font-size: 30px;
+  line-height: 70px;
+
 }
 
-/* 두 번째 화면 두 번째 사진 내용(텍스트) 설정 - 신청 ~ 있어요 */
-
-.listener #section1 .list:nth-child(2) {
-  flex: 1;
-}
-
-/* 두 번째 화면 세 번째 사진 내용(텍스트) 설정 - 활동한 ~ 정산돼요 */
-
-.listener #section1 .list:nth-child(3) {
-  flex: 1;
-}
 
 /* 세 번째 화면 */
-
-.listener #section2 {
-  background: orange;
-}
 
 .listener #section2 .main-txt {
   text-align: center;
@@ -817,203 +725,53 @@ header nav.mobile-nav span {
   margin-top: 20px;
 }
 
-.listener #section2 .sub-txt {
+.listener #section2 .main-txt .text1 {
   display: flex;
-  margin-top: 20px;
-}
-
-.listener #section2 .sub-txt1 {
-  flex: 1;
-}
-
-.listener #section2 .sub-txt2 {
-  flex: 1;
-}
-
-.listener #section2 .sub-txt3 {
-  flex: 1;
-}
-
-/* 네 번째 화면 */
-
-.listener #section3 {
-  background: skyblue;
-}
-.listener #section3 .main-txt {
-  position: absolute;
-  text-align: center;
-  width: 100%;
-  height: 25%;
-}
-
-/*활용 TIP 부분 */
-
-.tip #section0 {
-  width: 100%;
-  height: 820px;
-}
-
-.tip #section1 {
-  width: 100%;
-  height: 820px;
-  margin-bottom: 100px;
-  padding-bottom: 100px;
-}
-
-/*전체적인 글씨 중앙정렬*/
-.tip .subVisual {
-  margin: 0 150px;
-}
-
-.tip .subVisual .txtboxWrap {
-  padding-top: 200px;
-  text-align: center;
-}
-
-/*같이 걷고 싶을때, 혼자라는 생각이 들때
-    실제 고객님들의 이용후기 이부분 글씨*/
-.tip .subVisual .txtboxWrap .txtbox {
-  font-size: 40px;
-  font-weight: bold;
-  text-align: center;
-  color: #3c3c3c;
-  padding: 0 16px;
-}
-
-/*같이 걷고 싶을때, 혼자라는 생각이 들때 이부분 글씨*/
-.tip .subVisual .txtboxWrap .sub_txtbox {
-  font-size: 30px;
-  line-height: 42px;
-  font-weight: 400;
-  text-align: center;
-  color: #3c3c3c;
-  margin-top: 16px;
-  padding: 0 16px;
-}
-
-.tip .subVisual .imgbox {
-  position: absolute;
-  bottom: 0%;
+  padding-left: 25%;
   width: 100%;
   height: 100%;
 }
-.tip .subVisual .imgbox:after {
-  content: "";
-  display: block;
-  clear: both;
+.listener #section2 .main-txt .imgbox1 {
+  margin-left: -7%;
+}
+.listener #section2 .main-txt .imgbox2 {
+  margin-left: 10%;
 }
 
-.tip .subVisual .imgbox .list {
-  width: 25%;
-  float: left;
-  text-align: center;
-  height: 60%;
-  overflow: hidden;
-  position: absolute;
-  bottom: 0;
+.listener #section2 .main-txt .txtbox {
+  font-size: 20px;
+  line-height: 35px;
+  opacity: 0.5;
+  width: auto;
 }
 
-.tip .subVisual .imgbox .list:nth-child(1) {
-  left: 0;
+.listener #section2 .main-txt .text2 {
+  align-items: center;
+  text-align: start;
+  padding-left: 25%;
 }
-.tip .subVisual .imgbox .list:nth-child(2) {
-  left: 25%;
-}
-.tip .subVisual .imgbox .list:nth-child(3) {
-  left: 50%;
-}
-.tip .subVisual .imgbox .list:nth-child(4) {
-  left: 75%;
-}
-
-.tip .section .subVisual .imgbox .list > span {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 1;
-}
-
-.tip .section .subVisual .imgbox .list > p {
-  position: absolute;
-  top: 60%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 24px;
-  color: #fff;
-  font-weight: 500;
-  z-index: 1;
+.listener #section2 .main-txt .text2 .img3 {
   width: 100%;
+  margin-left: -7%;
 }
-
-/*애니맨에 없고 내가 만든것*/
-.tip .subVisual .imgbox .list p.big {
-  font-size: 34px;
-  line-height: 48px;
-  font-weight: 500;
-  padding-bottom: 400px;
-  color: black;
-}
-
-/*
-.tip .section .subVisual .imgbox .list:hover div {
-    transform: scale(1.15);
-    transition: all 0.7s;
-    -webkit-filter: blur(2px);
-    -moz-filter: blur(2px);
-    -o-filter: blur(2px);
-    -ms-filter: blur(2px);
-    filter: blur(2px);
-}
-*/
-
-.tip .section .subVisual .imgbox .list div {
+.listener #section2 .main-txt .text2 .txtbox {
+  display: flex;
+  width: 80%;
+  text-align: center;
+  opacity: 0.8;
   height: 100%;
-  /*transition: all 0.7s;*/
 }
-
-/* 마우스 위로 갔을때 색깔 변하도록 하는것*/
-/*
-.tip .section .subVisual .imgbox .list div:hover:after {
-    content: "";
-    display: block;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.6);
+.listener #section2 .main-txt .text2 .txtbox p {
+  padding-left: 20px;
+  font-size: 20px;
+  height: 100%;
 }
-*/
-
-.tip #section0 .subVisual .imgbox .list:nth-child(1) > div {
-  background-color: red;
-  background-size: cover;
+.listener #section2 .main-txt .text2 .txtbox span {
+  font-size: 22px;
+  font-weight: 500px;
 }
-.tip #section0 .subVisual .imgbox .list:nth-child(2) > div {
-  background-color: orange;
-  background-size: cover;
-}
-.tip #section0 .subVisual .imgbox .list:nth-child(3) > div {
-  background-color: yellow;
-  background-size: cover;
-}
-.tip #section0 .subVisual .imgbox .list:nth-child(4) > div {
-  background-color: green;
-  background-size: cover;
-}
-
-.tip #section1 .subVisual .imgbox .list:nth-child(1) > div {
-  background-color: gray;
-  background-size: cover;
-}
-.tip #section1 .subVisual .imgbox .list:nth-child(2) > div {
-  background-color: gray;
-  background-size: cover;
-}
-.tip #section1 .subVisual .imgbox .list:nth-child(3) > div {
-  background-color: gray;
-  background-size: cover;
-}
-.tip #section1 .subVisual .imgbox .list:nth-child(4) > div {
-  background-color: gray;
-  background-size: cover;
+.listener .all-ft .app-down .main-txt p {
+  font-size: 20px;
 }
 
 /*****company 클래스 부분*****/
@@ -1202,14 +960,6 @@ header nav.mobile-nav span {
   height: auto !important;
 }
 
-.all-ft .slick-box {
-  padding: 70px 0;
-}
-
-.all-ft .slick-box .brand-logo {
-  display: flex;
-}
-
 .all-ft .app-down {
   background: url("Image/main-bg06.png") no-repeat 50% 50%;
   background-size: cover;
@@ -1363,6 +1113,20 @@ footer#footer .logo .seoul {
     padding-top: 100px;
   }
 
+  .listener #section2 .main-txt .text1 .imgbox1 {
+    margin-left: -30%;
+  }
+
+  .listener #section2 .subVisual .main-txt .text1 .txtbox p{
+    font-size: 20px;
+  }
+  .listener #section2 .subVisual .main-txt .text2 .txtbox p {
+    font-size: 12px;
+    line-height: 20px;
+  }
+  .listener #section2 .subVisual .main-txt .text2 .txtbox span {
+    font-size: 14px;
+  }
   .use #section4 .txtbox span {
     right: -90%;
   }
@@ -1454,8 +1218,19 @@ footer#footer .logo .seoul {
 }
 
 @media screen and (max-width: 1024px) {
-  /* 로고 왼쪽 끝으로 */
 
+  .listener #section2 .subVisual .main-txt .text1 .txtbox p{
+    font-size: 20px;
+  }
+
+ .listener #section2 .subVisual .main-txt .text2 .txtbox p {
+   font-size: 10px;
+   line-height: 20px;
+   padding-left: 20px;
+ }
+ .listener #section2 .subVisual .main-txt .text2 .txtbox span {
+   font-size: 12px;
+ }
   header > a {
     left: 20px;
   }
@@ -1643,49 +1418,21 @@ footer#footer .logo .seoul {
     font-size: 30px;
   }
 
-  /* imgbox( 4 영역으로 나눠 놓은 이미지 ) 100% > 60% */
-
-  .tip .subVisual .imgbox {
-    height: 60%;
+  .listener #section1 .main-txt .txtbox p.title span {
+    font-size: 22px;
   }
 
-  /* imgbox list( 안에 내용들 ) 각 각 width, height 반으로 줄이기 */
-
-  .tip .subVisual .imgbox .list {
-    width: 50%;
-    height: 50%;
-    position: relative;
+  .listener #section1 .main-txt .txtbox p.title {
+    font-size: 18px;
+  }
+  .listener #section2 .subVisual .main-txt .text1 .img1,
+  .listener #section2 .subVisual .main-txt .text1 .img2 {
+    width: 120px;
   }
 
-  /* 안의 내용들 각 각 왼쪽으로 붙이기 */
-
-  .tip .subVisual .imgbox .list:nth-child(1),
-  .tip .subVisual .imgbox .list:nth-child(2),
-  .tip .subVisual .imgbox .list:nth-child(3),
-  .tip .subVisual .imgbox .list:nth-child(4) {
-    left: 0;
-  }
-
-  /* 안의 내용들 각 각 상단선 기준 아래쪽으로 65%에 위치 */
-
-  .tip .section .subVisual .imgbox .list > p {
-    top: 65%;
-  }
-
-  .listener .subVisual .sub-img .list:nth-child(1),
-  .listener .subVisual .sub-img .list:nth-child(2),
-  .listener .subVisual .sub-img .list:nth-child(3) {
-    left: 0;
-  }
-  .listener .sub-img {
-    align-items: center;
-    flex-direction: column;
-    height: 65%;
-  }
-  .listener .sub-img .list {
-    width: 70%;
-    height: 50%;
-    position: relative;
+  .listener #section2 .subVisual .main-txt .text1 .txtbox p {
+    font-size: 14px;
+    line-height: 16px;
   }
 
   /*** company.html 본문 내용 수정 ***/
@@ -1871,10 +1618,6 @@ footer#footer .logo .seoul {
     line-height: 40px;
   }
 
-  .listener .sub-img .list {
-    width: 90%;
-  }
-
   /* 모든 화면 텍스트 p.title 폰트 크기, 줄 간격 조정 */
 
   .listener .main-txt p.title {
@@ -1882,42 +1625,42 @@ footer#footer .logo .seoul {
     line-height: 30px !important;
   }
 
-  /*** tip.html 조정 ***/
-
-  /* 첫번째 화면 고민 ~ 들때 텍스트 위치 조정 */
-
-  .tip .subVisual .txtboxWrap {
-    padding-top: 130px;
+  .listener #section1 .main-txt .txtbox p.title {
+    font-size: 10px;
   }
 
-  /* 첫번째 화면 아이콘 위치 조정 */
-
-  .tip .section .subVisual .imgbox .list > span {
-    width: 50px;
-    height: 50px;
-    top: 40%;
-  }
-  .tip .section .subVisual .imgbox .list > span img {
-    width: 100%;
+  .listener #section1 .main-txt .txtbox p.title span {
+    font-size: 13px;
   }
 
-  /* 첫번째 화면 아이콘 텍스트 폰트 크기 조정 */
-
-  .tip .section .subVisual .imgbox .list > p {
-    font-size: 18px;
+  .listener #section2 .subVisual .main-txt .text1 .img1,
+  .listener #section2 .subVisual .main-txt .text1 .img2 {
+    width: 120px;
+    height: 120px;
+  }
+  .listener #section2 .subVisual .main-txt .text1 .txtbox p {
+    padding-left: 0;
+    padding-right: 0;
+    font-size: 5px;
+  }
+  .listener #section2 .subVisual .main-txt .text2-mb .txtbox {
+    display: flex;
   }
 
-  /* 첫번째 화면 고민 ~ 들 때 텍스트 폰트 크기, 줄 간격, 문단 간격 조정 */
-
-  .tip .subVisual .txtboxWrap .txtbox {
-    font-size: 24px;
-    line-height: 32px;
-  }
-  .tip .subVisual .txtboxWrap .sub_txtbox {
-    margin-top: 8px;
-    position: unset;
+  .listener #section2 .subVisual .main-txt .text2-mb .txtbox span {
     font-size: 16px;
-    line-height: 24px;
+  }
+
+  .listener #section2 .subVisual .main-txt .text2-mb .img3 {
+    padding-left: 20px;
+  }
+
+  .listener #section2 .subVisual .main-txt .text2 {
+    display: none;
+  }
+
+  .listener #section2 .subVisual .main-txt .text2-mb {
+    display: block;
   }
 
   /*** company.html 조정 ***/
