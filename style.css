@@ -141,7 +141,7 @@ header nav.mobile-nav .sidenav .closebtn {
 header nav.mobile-nav span {
   font-size: 30px;
   cursor: pointer;
-  color: #fff;
+  color: #e9e9e9;
   float: right;
   position: absolute;
   right: 20px;
@@ -166,6 +166,9 @@ header nav.mobile-nav span {
   top: 75%;
   left: 70%;
   transform: translate(0, -50%);
+  width: 300px;
+  border: 13px solid #e9e9e9;
+  border-radius: 55px;
 }
 /* mainVisual은 첫 번째 화면 */
 .main #section0 .mainVisual {
@@ -257,6 +260,7 @@ header nav.mobile-nav span {
   top: 0%;
   right: 50%;
   padding-right: 10%;
+  width: 600px;
 }
 
 /* 세 번째 화면에 있는 내용 전부  언제 ~ 이용 방법 */
@@ -434,7 +438,6 @@ header nav.mobile-nav span {
 .use #section0 .row2.s1 .txtbox {
   left: 0;
   right: 225px;
-  text-align: left;
   position: absolute;
   top: 40%;
   text-align: center;
@@ -526,7 +529,7 @@ header nav.mobile-nav span {
   text-align: end;
   position: absolute;
   top: 50%;
-  left: 55%;
+  left: 50%;
   transform: translate(-50%, -50%);
 }
 
@@ -672,9 +675,9 @@ header nav.mobile-nav span {
   color: #3c3c3c;
 }
 
-/**** 두 번째 화면 ****/
+/**** 첫 번째 화면 ****/
 
-/* 두 번째 화면 (산책리스너란? ~ 있습니다) 텍스트 설정*/
+/* 첫 번째 화면 (산책리스너란? ~ 있습니다) 텍스트 설정*/
 
 .listener #section1 .main-txt {
   text-align: center;
@@ -687,7 +690,7 @@ header nav.mobile-nav span {
   display: flex;
 }
 
-/* 두 번째 화면 전체 사진 설정 */
+/* 첫 번째 화면 전체 사진 설정 */
 
 .listener #section1 .img {
   width: 33%;
@@ -716,7 +719,7 @@ header nav.mobile-nav span {
 }
 
 
-/* 세 번째 화면 */
+/* 두 번째 화면 */
 
 .listener #section2 .main-txt {
   text-align: center;
@@ -1147,6 +1150,7 @@ footer#footer .logo .seoul {
   .use #section0 .row2.s2 {
     width: 50%;
   }
+
   /* 첫 번째 화면 왼쪽 텍스트 */
 
   .use #section0 .row2.s1 .txtbox {
@@ -1300,7 +1304,7 @@ footer#footer .logo .seoul {
     top: 65%;
     left: 0;
   }
-  .use #section1 .row2.s1,
+
   .use #section2 .row2.s2,
   .use #section3 .row2.s1,
   .use #section4 .row2.s2 {
@@ -1308,41 +1312,32 @@ footer#footer .logo .seoul {
   }
 
 
-
-  /* use.html 두 번째 화면 폰 이미지 가운데로 설정 */
-
-  .use #section1 .img {
-    top: 70%;
-    left: 50%;
-    right: 0;
-    width: 300px;
-  }
-
   /* use.html 세 번째 화면 폰 이미지 가운데로 설정 */
 
   .use #section2 .img {
-    top: 70%;
+    top: 52%;
     left: 50%;
     right: 0;
-    width: 300px;
+    width: 250px;
+    z-index: 10;
   }
 
   /* use.html 네 번째 화면 폰 이미지 가운데로 설정 */
 
   .use #section3 .img {
-    top: 70%;
+    top: 52%;
     left: 50%;
     right: 0;
-    width: 300px;
+    width: 250px;
   }
 
   /* use.html 다섯 번째 화면 폰 이미지 가운데로 설정 */
 
   .use #section4 .img {
-    top: 70%;
+    top: 52%;
     left: 50%;
     right: 0;
-    width: 300px;
+    width: 250px;
   }
 
   /* use.html 본문 텍스트 폰트 크기 조정 */
@@ -1405,6 +1400,14 @@ footer#footer .logo .seoul {
 }
 
 @media screen and (max-width: 768px) {
+
+  .main #section0 .mainVisual .main-txt .imgbox .img {
+    width: 220px;
+  }
+
+  .main #section2 .subVisual .main-txt .imgbox .img {
+    left: 5px;
+  }
 
   .main #section2 .subVisual .main-txt p.title {
     font-size: 18px;
@@ -1470,8 +1473,7 @@ footer#footer .logo .seoul {
   /*** main.html 조정 ***/
   /* 첫번째, 네번째 화면 위치 조정 */
 
-  .main #section0 .mainVisual .main-txt,
-  .main #section3 .subVisual .main-txt {
+  .main #section0 .mainVisual .main-txt {
     left: 0;
     transform: translate(0%, -50%);
   }
@@ -1485,10 +1487,20 @@ footer#footer .logo .seoul {
     text-align: right;
   }
 
+  .main #section0 .mainVisual .main-txt .imgbox .img {
+    top: 250px;
+    left: 280px;
+    width: 180px;
+  }
+
+  .main #section2 .subVisual .main-txt .imgbox .img {
+    width: 400px;
+  }
+
   /* 첫번째 화면 내 이야기 ~ 나와산책 텍스트 폰트 크기, 줄 간격 조정 */
 
   .section .main-txt p.title {
-    font-size: 28px;
+    font-size: =18px;
     line-height: 45px !important;
   }
 
@@ -1529,15 +1541,17 @@ footer#footer .logo .seoul {
 
   /* 세번째 화면 문단 간격 조정 */
 
-  .main #section2 .main-txt p.title {
-    line-height: 28px;
+  .main #section2 .subVisual .main-txt p.title {
+    text-align: center;
+    font-size: 12px;
   }
 
   /* 세, 네번째 화면 문단, 줄 간격 조정 */
 
   .main #section2 .main-txt p {
-    font-size: 13px;
-    line-height: 28px;
+    line-height: 22px;
+    text-align: center;
+    font-size: 12px;
   }
 
   /* 세, 네번째 화면 버튼 안 텍스트 폰트 크기 조정 */
@@ -1582,47 +1596,15 @@ footer#footer .logo .seoul {
 
   /*** listener.html 수정 ***/
 
-  /* 첫번째 화면 폰 이미지 화면 비율 조정 */
-
-  .listener #section0 .img {
-    width: 100%;
-    bottom: 0% !important;
-  }
-  .listener #section0 .img > img {
-    width: 100%;
-  }
-
-  /* 첫번째 화면 텍스트 위치 위로부터 100px만큼 떨어트리기 */
-
-  .listener #section0 .main-txt {
-    padding-top: 100px;
-  }
-
-  /* 첫번째 화면 원하시는 ~ 만큼 텍스트 폰트 크기 조정 */
-
-  .listener #section0 .main-txt p {
-    font-size: 20px;
-  }
-
-  /* 첫번째 화면 이제 ~ 나와산책 텍스트 폰트 크기, 위치 조정 */
-
-  .listener #section0 .main-txt p.title {
-    font-size: 26px;
-    padding-top: 24px;
-  }
-
-  /* 첫번째 화면 나와산책 텍스트 폰트 크기, 줄 간격 조정 */
-
-  .listener #section0 .main-txt p.title span {
-    font-size: 32px;
-    line-height: 40px;
-  }
-
   /* 모든 화면 텍스트 p.title 폰트 크기, 줄 간격 조정 */
 
   .listener .main-txt p.title {
     font-size: 22px;
     line-height: 30px !important;
+  }
+
+  .listener #section1 .main-txt .txtbox {
+    line-height: 2px;
   }
 
   .listener #section1 .main-txt .txtbox p.title {
@@ -1700,6 +1682,10 @@ footer#footer .logo .seoul {
     left: 16px;
     bottom: 40px;
     
+  }
+
+  .company #section0 .mainVisual .main-txt p.title {
+    font-size: 35px;
   }
 
   /* ceo 인사말 텍스트 위치 조정 */
